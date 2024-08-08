@@ -10,6 +10,11 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
+import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
+import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
+import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -35,6 +40,18 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPage />
+  },
+  {
+    path: 'forget-password',
+    element: <ForgetPassword />
+  },
+  {
+    path: 'email-sent',
+    element: <EmailSent />
+  },
+  {
+    path: 'reset-password',
+    element: <ResetPassword />
   }
 ]);
 
