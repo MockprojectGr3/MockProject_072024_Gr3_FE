@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
+import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <RegisterPage />
+      },
+      {
+        path: "terms-and-conditions",
+        element: <TermsAndConditions />
       }
     ]
   },
@@ -35,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPage />
+  },
+  {
+    path: "terms-and-conditions",
+    element: <TermsAndConditions />
   }
 ]);
 
