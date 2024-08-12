@@ -13,12 +13,13 @@ import HomePage from './component_page/page/homepage.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
 import Service from './component_page/page/service.jsx'
+import News_DeTail_Page from './component_page/page/news_detail.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     // element: <div>Hello world!</div>,
-    
+
     children: [
       {
         index: true,
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "service",
     element: <Service />
+  },
+  {
+    path: "news_detail",
+    element: <News_DeTail_Page />
   }
 ]);
 

@@ -66,12 +66,16 @@ const Header = () => {
                         className="h-10 w-10"
                     />
                 </div>
-                <div className="contact basis-3/4 flex justify-end items-center">
-                    <div className="text-white flex gap-3 me-10">
+                <div className="contact basis-3/4 flex justify-end items-center" >
+                    <div className="text-white flex gap-3 me-10"
+                        style={{ alignItems: "baseline" }}
+                    >
                         <PhoneOutlined />
                         <p>1-800-492-6185</p>
                     </div>
-                    <div className="text-white flex gap-3">
+                    <div className="text-white flex gap-3"
+                        style={{ alignItems: "baseline" }}
+                    >
                         <MailOutlined />
                         <p>hi@gruardgrid.com</p>
                     </div>
