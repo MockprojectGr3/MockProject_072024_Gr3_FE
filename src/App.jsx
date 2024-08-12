@@ -14,21 +14,21 @@ function App() {
   const [count, setCount] = useState(0)
   useEffect(() => {
 
-    const fetchHelloWorld = async () => {
-      const res = await axios.get(`/v1/api`)
-      console.log(">>>Check res: ", res)
-    }
+    // const fetchHelloWorld = async () => {
+    //   const res = await axios.get(`/v1/api`)
+    //   console.log(">>>Check res: ", res)
+    // }
 
-    fetchHelloWorld()
+    // fetchHelloWorld()
 
   }, [])
 
 
   return (
     <>
-      <Header/>
+      <Header />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   )
 }

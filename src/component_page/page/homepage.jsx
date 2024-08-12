@@ -1,11 +1,9 @@
-import SecurityService from "../SecurityService";
-
+import '../../style/HomePage.css'
 const HomePage = () => {
     return (
         <div>
-            <SecurityService/>
+            Home page
         </div>
     )
 }
-
 export default HomePage;
