@@ -13,6 +13,7 @@ import HomePage from './component_page/page/homepage.jsx'
 import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
 import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
 import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 
 
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: 'reset-password',
     element: <ResetPassword />
+  },
+  {
+    path: 'terms-and-conditions',
+    element: <TermsAndConditions />
   }
 ]);
 
