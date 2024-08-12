@@ -1,47 +1,63 @@
 import React, { useState } from "react";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  PhoneFilled,
-  PhoneOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
-import { Divider, Menu } from "antd";
+import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const items = [
+  const itemsLeft = [
     {
       label: <Link to={"/"}>Home</Link>,
-      // label: 'Home Page',
       key: "home",
     },
     {
-      label: "Sign in",
-      key: "SubMenu",
-      icon: <SettingOutlined />,
-      children: [
-        {
-          label: <Link to={"login"}>Login</Link>,
-          key: "login",
-        },
-        {
-          label: <Link to={"register"}>Register</Link>,
-          key: "register",
-        },
-      ],
+      label: <Link to={"/about"}>About Us</Link>,
+      key: "about",
+    },
+    {
+      label: <Link to={"/service"}>Services</Link>,
+      key: "services",
+    },
+    {
+      label: <Link to={"/news"}>News</Link>,
+      key: "news",
+    },
+    {
+      label: <Link to={"/career"}>Careers</Link>,
+      key: "careers",
+    },
+    {
+      label: <Link to={"/contact"}>Contact Us</Link>,
+      key: "contact",
+    },
+    {
+      label: <Link to={"/faq"}>FAQs</Link>,
+      key: "faq",
     },
   ];
-  const [current, setCurrent] = useState("mail");
+
+  const itemsRight = [
+    {
+      label: <Link to={"/login"}>LOGIN</Link>,
+      key: "login",
+    },
+    {
+      label: <Link to={"/register"}>REGISTER</Link>,
+      key: "register",
+    },
+  ];
+
+  const [current, setCurrent] = useState("home");
+
   const onClick = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
   };
+
   return (
     <>
       <header
-        className="header flex flex-row justify-between items-center p-10 bg-danger"
-        // style={{ backgroundColor: "rgba(15, 32, 48, 1)" }}
+        className="header flex flex-row justify-between items-center p-4 bg-danger"
+        style={{ backgroundColor: "rgba(15, 32, 48, 1)", height: 80 }}
       >
         <div className="logo basis-1/4">
           <img
@@ -50,18 +66,37 @@ const Header = () => {
             className="h-10 w-10"
           />
         </div>
-        <p className="bg-danger text-blue">ádljádnakl</p>
-        <div className="contact basis-3/4 flex justify-end items-center  text-white">
-          <PhoneOutlined className="text-lg" />
+        <div className="contact basis-3/4 flex justify-end items-center">
+          <div className="text-white flex gap-3 me-10">
+            <PhoneOutlined />
+            <p>1-800-492-6185</p>
+          </div>
+          <div className="text-white flex gap-3">
+            <MailOutlined />
+            <p>hi@gruardgrid.com</p>
+          </div>
         </div>
       </header>
-      <Menu
-        onClick={onClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-      />
+      <div className="flex flex-row justify-between">
+        <Menu
+          onClick={onClick}
+          selectedKeys={[current]}
+          mode="horizontal"
+          items={itemsLeft}
+          className="flex-1"
+          style={{ height: 60, backgroundColor: "rgba(214, 190, 154, 1)" }}
+        />
+        <Menu
+          onClick={onClick}
+          selectedKeys={[current]}
+          mode="horizontal"
+          items={itemsRight}
+          className="flex-none"
+          style={{ height: 60, backgroundColor: "rgba(214, 190, 154, 1)" }}
+        />
+      </div>
     </>
   );
 };
+
 export default Header;
