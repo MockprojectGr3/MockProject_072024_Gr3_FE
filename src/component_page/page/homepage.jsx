@@ -1,7 +1,9 @@
+import SecurityService from "../SecurityService";
+
 const HomePage = () => {
     return (
         <div>
-            Home page
+            <SecurityService/>
         </div>
     )
 }
