@@ -1,0 +1,70 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 1280px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+.card-title{
+    font-weight: bold;
+}
+.card{
+    border-radius: 0px; 
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card:hover{
+    cursor: pointer;
+}
+.card-body{
+    text-align: justify;
+    display: grid;
+}
+.card-img-top{
+    height: 50%;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+
+/* Responsive  */
+/* Hiển thị cho PC*/
+@media only screen and (min-width: 1024px) {
+    .card-title{
+        font-size: 20px;
+    }
+    .card-text{
+        font-size: 16px;
+    }
+}
+
+/* Hiển thị cho tablet */
+@media only screen and (max-width:1023px) and (min-width: 641px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 10px;
+      }
+      .card-title{
+        font-size: 18px;
+    }
+    .card-text{
+        font-size: 15px;
+    }
+}
+
+/* Hiển thị cho SP*/
+@media only screen and (max-width: 640px) and (min-width: 280px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 10px;
+      }
+    .card-title{
+        font-size: 13px;
+    }
+    .card-text{
+        font-size: 10px;
+    }
+}
