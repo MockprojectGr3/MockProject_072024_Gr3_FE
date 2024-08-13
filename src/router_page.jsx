@@ -10,19 +10,15 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
-import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
-import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
-import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
-import TermsAndConditions from './component_page/page/termsandconditions.jsx'
-
-
-
+import ContactPage from './component_page/page/contact.jsx'
+import NewsPage from './component_page/page/news.jsx'
+import Service from './component_page/page/service.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     // element: <div>Hello world!</div>,
-
+    
     children: [
       {
         index: true,
@@ -43,20 +39,16 @@ const router = createBrowserRouter([
     element: <LoginPage />
   },
   {
-    path: 'forget-password',
-    element: <ForgetPassword />
+    path: "news",
+    element: <NewsPage />
   },
   {
-    path: 'email-sent',
-    element: <EmailSent />
+    path: "contact",
+    element: <ContactPage />
   },
   {
-    path: 'reset-password',
-    element: <ResetPassword />
-  },
-  {
-    path: 'terms-and-conditions',
-    element: <TermsAndConditions />
+    path: "service",
+    element: <Service />
   }
 ]);
 

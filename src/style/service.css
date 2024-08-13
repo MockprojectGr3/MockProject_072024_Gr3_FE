@@ -1,0 +1,364 @@
+.sv-container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    height: 1424px;
+}
+.sv-list{
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 27px;
+}
+.max-w-sm{
+    background-color: #1F1D2C !important;
+    color: white;
+    width: 454px;
+    height: 300px;
+    text-align: justify;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.mb-2{
+    font-size: 32px;
+    height: 30px;
+}
+.mb-3{
+    color: #9B9B9B;
+    font-size: 24px;
+    height: 100px;
+    width: 340px;
+}
+.img-sv{
+    width: 112.51px;
+    height: 65px;
+    float: left;
+}
+.intro-sv{
+    text-align: justify;
+    margin: 52px;
+}
+.info-sv{
+    height: 500px;
+    display: flex;
+    width: 100%;
+    gap: 60px;
+}
+.item{
+      /* position: relative; */
+      width: 100%;
+      display: flex;
+      border: 1px solid;
+      height: 25%;
+      background-color: #1F1D2C;
+      padding: 10px 0px;
+      /* margin: 10px 0px; */
+      margin-bottom: 10px;
+}
+.lst-info{
+    padding-left: 10px;
+}
+.icon{
+    width: 30%;
+    height: 100%;
+}
+.text{
+    display: grid;
+    bottom: 10px;
+    text-align: justify;
+    /* position: absolute; */
+    width: 69%;
+    font-size: 20px;
+    color: white;
+    align-items: center;
+}
+.list-item{
+    height: 100%;
+    width: 50%;
+    margin-top: 10px;
+    display: block;
+}
+.info{
+    width: 50%;
+    height: 100%;
+    margin-top: 10px;
+    text-align: justify;
+}
+.caption{
+    color: #2A4AF4;
+    font-size: 20px;
+}
+.title{
+    color: #266F8E;
+    font-weight: bold;
+    font-size: 30px;
+}
+.mark-info{
+    margin: 10px 0px 0px 10px;
+}
+.customicon{
+    color: #2A4AF4;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.subtitle{
+    color: #9694E7;
+    font-size: 20px;
+}
+h2{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* Responsive  */
+/* Hiển thị cho PC*/
+
+/* Hiển thị cho tablet */
+@media only screen and (max-width:1024px) and (min-width: 801px) {
+    .sv-list{
+        grid-gap: 15px;
+    }
+    .max-w-sm{
+        padding: 20px;
+        width: 367px;
+    }
+    .mb-2{
+        font-size: 24px;
+        width: 310px;
+        margin-left: 5px;
+        height: 24px;
+    }
+    .mb-3{
+        font-size: 22px;
+        width: 310px;
+        height: 80px;
+    }
+    .img-sv{
+        width: 100px;
+        margin-left: 0px;
+        height: 50px;
+    }
+}
+@media only screen and (max-width:800px) and (min-width: 641px) {
+    .sv-list{
+        grid-gap: 15px;
+    }
+    .max-w-sm{
+        width: 345px;
+        padding: 20px;
+    }
+    .mb-2{
+        font-size: 24px;
+        width: 296px;
+        margin-left: 8px;
+    }
+    .mb-3{
+        width: 275px;
+        height: 80px;
+        font-size: 22px;
+        margin-left: 7px;
+    }
+    .img-sv{
+        width: 100px;
+        height: 60px;
+    }
+}
+/* Hiển thị cho SP*/
+@media only screen and (max-width: 640px) and (min-width: 481px){
+    .sv-list{
+        grid-gap: 10px;
+    }
+    .max-w-sm{
+        width: 234px;
+        height: 207px;
+        padding: 10px;
+    }
+    .mb-2{
+        width: 209px;
+        font-size: 20px;
+        /* margin-left: -8px; */
+        height: 13px;
+    }
+    .mb-3{
+        font-size: 18px;
+        width: 190px;
+        margin-left: 4px;
+        height: 65px;
+    }
+    .img-sv{
+        width: 60px;
+        height: 30px;
+    }
+    .intro-sv{
+        margin: 0px;
+        padding: 20px 0px;    
+    }
+    
+    .info-sv{
+        gap: 15px;
+    }
+    .item{
+        height: 75px;
+    }
+    .icon{
+       width: 40%;
+    }
+    .text{
+        font-size: 12px;
+        margin-right: 5px;
+    } 
+    .caption{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    .customicon{
+      font-size: 10px;
+    }
+    .subtitle{
+        text-align: justify;
+        font-size: 15px;
+    }
+    .intro-sub{
+        font-size: 14px;
+    }
+    .intro-wel{
+        font-size: 20px;
+    }
+    .lst-info{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 480px)and (min-width : 401px){
+    .sv-list{
+        grid-gap: 10px;
+        margin-left: -10px;
+    }
+    .max-w-sm{
+        width: 182px;
+        height: 207px;
+        padding: 10px;
+    }
+    .mb-2{
+        width: 160px;
+        font-size: 15px;
+        margin-left: 13px;
+        height: 13px;
+    }
+    .mb-3{
+        font-size: 14px;
+        width: 147px;
+        margin-left: 14px;
+    }
+    .img-sv{
+        width: 60px;
+        height: 30px;
+    }
+    .intro-sv{
+        margin: 0px;
+        padding: 20px 0px;    
+    }
+    
+    .info-sv{
+        gap: 15px;
+    }
+    .item{
+        height: 75px;
+    }
+    .icon{
+       width: 40%;
+    }
+    .text{
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    .caption{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    .customicon{
+      font-size: 10px;
+    }
+    .subtitle{
+        text-align: justify;
+        font-size: 15px;
+    }
+    .intro-sub{
+        font-size: 14px;
+    }
+    .intro-wel{
+        font-size: 20px;
+    }
+    .lst-info{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 400px)and (min-width : 270px){
+    .sv-list{
+        grid-gap: 10px;
+        margin-left: -25px;
+        /* grid-gap: 7px;
+        margin-left: -30px; */
+    }
+    .max-w-sm{
+        width: 182px;
+        height: 207px;
+        padding: 10px;
+    }
+    .mb-2{
+        width: 160px;
+        font-size: 15px;
+        margin-left: 13px;
+        height: 13px;
+    }
+    .mb-3{
+        font-size: 14px;
+        width: 147px;
+        margin-left: 14px;
+    }
+    .img-sv{
+        width: 60px;
+        height: 30px;
+    }
+    .intro-sv{
+        margin: 15px 0px;
+    }
+    .intro-sub{
+        font-size: 16px;
+    }
+    .intro-wel{
+        font-size: 22px;
+    }
+    .info-sv{
+        gap: 15px;
+    }
+    .item{
+        height: 70px;
+    }
+    .icon{
+        width: 40%;
+    }
+    .text{
+        font-size: 11px;
+        margin-right: 10px;
+    }
+    .caption{
+        font-size: 14px;
+    }
+    .title{
+        font-size: 13px;
+    }
+    .customicon{
+        font-size: 10px;
+    }
+    .subtitle{
+        font-size: 12px;
+    }
+    .btn-primary{
+        font-size: 14px;
+    }
+}
