@@ -1,14 +1,6 @@
+import SecurityPage from "../page/SecurityPage";
 import SecurityService from "../SecurityService";
 
-import '../../style/HomePage.css'
-const HomePage = () => {
-    return (
-        <div>
-             <SecurityService/>
-        </div>
-    )
-}
-export default HomePage;
 import React, { useState, useEffect } from 'react';
 import SecurityService  from '../SecurityService';
 const slides = [
