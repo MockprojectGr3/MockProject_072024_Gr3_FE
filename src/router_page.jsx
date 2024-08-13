@@ -14,6 +14,8 @@ import HomePage from './component_page/page/homepage.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
 import Service from './component_page/page/service.jsx'
+import ChooseServices from './component_page/page/choose_services.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "service",
     element: <Service />
+  },
+  {
+    path: "choose-services",
+    element: <ChooseServices />
   }
 ]);
 
