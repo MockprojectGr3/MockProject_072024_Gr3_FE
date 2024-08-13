@@ -10,13 +10,12 @@ const HomePage = () => {
 }
 export default HomePage;
 import React, { useState, useEffect } from 'react';
-
+import SecurityService  from '../SecurityService';
 const slides = [
   {
     image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbhC9tPKG69HdL4yhvHhd6J7kGb5YlQ4Y3BV0A5KGD9IqppNk3",
     title: "SECURITY SERVICES FOR YOUR BUSINESS SAFETY"
   },
-  // Thêm các slide khác ở đây
 ];
 
 const HomePage = () => {
@@ -53,12 +52,12 @@ const HomePage = () => {
       <section className="py-16 px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-sm font-semibold text-gray-500 mb-2">WHO WE ARE</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">WHEN YOU NEED BETTER SECURITY INSTALLATION</h3>
+          <h5 className="text-3xl md:text-4xl font-bold mb-4">WHEN YOU NEED BETTER SECURITY INSTALLATION</h5>
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
             At Guardgrid Security, we are more than security providers; we are your dedicated partners in safety. 
             Trust us to elevate your security, ensuring a fortress of protection when you need it most.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-12">
             {[
               {
                 icon: "🕵️‍♂️",
@@ -96,48 +95,14 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white px-6">
-        <div className="container mx-auto text-center">
-          <h2 className="text-sm font-semibold text-gray-500 mb-2">WHAT YOU DO</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-12">TOPLEVEL SECURITY SERVICES</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
-                title: "STATIC SECURITY",
-                description: "Static security guards maintain a visible presence at a fixed location, deterring threats and ensuring safety. They monitor entrances and conduct patrols to safeguard the assigned area."
-              },
-              {
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
-                title: "SECURITY DOG HANDLER",
-                description: "A dynamic duo of trained canines and skilled handlers. Experience the next level of security with our vigilant Security Dog Handlers, where instinct and training unite for your unparalleled protection."
-              },
-              {
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
-                title: "NHS & HEALTH",
-                description: "At Guardgrid Security, we understand the delicate nature of healthcare security. Our services go beyond safeguarding physical spaces; they extend to fostering an environment of trust and well-being."
-              }
-            ].map((service, index) => (
-              <div key={index} className="flex flex-col h-full">
-                <div className="relative h-64 mb-4">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover"/>
-                </div>
-                <div className="flex-grow flex flex-col bg-black text-white p-6">
-                  <h4 className="text-xl font-semibold mb-4">{service.title}</h4>
-                  <p className="text-sm">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SecurityService/>
 
       {/* Latest News & Blog */}
       <section className="py-16 bg-gray-100 px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-base font-semibold text-gray-500 mb-2">SECURITY ADVICES</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-12">LATEST NEWS & BLOG</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h5 className="text-3xl md:text-4xl font-bold mb-12">LATEST NEWS & BLOG</h5>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-12">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <div className="flex-shrink-0 w-full md:w-1/2">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVu8ahpDPZfClyIaGhW3VvL1sRhpEodPWtjQ&s" alt="Firefighter" className="w-full h-48 object-cover"/>
@@ -191,7 +156,7 @@ const HomePage = () => {
       </section>
 
       {/* Client Testimonials */}
-      <section className="bg-gray-100 px-6">
+      <section className="bg-gray-100 px-12">
         <div className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-8 md:mb-0 mr-8">
@@ -242,32 +207,6 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OUR SECURITY */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-base font-semibold text-gray-500 mb-2">OUR SECURITY</p>
-          <h3 className="text-3xl md:text-4xl font-bold">TRUSTED WORK AND PROJECTS</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8 bg-gray-900 text-white py-12">
-            <div className="border border-gray-700 p-6">
-              <h4 className="text-5xl font-extrabold">450</h4>
-              <p className="text-gray-400 mt-2">Objects Protected</p>
-            </div>
-            <div className="border border-gray-700 p-6">
-              <h4 className="text-5xl font-extrabold">125</h4>
-              <p className="text-gray-400 mt-2">Cameras Installed</p>
-            </div>
-            <div className="border border-gray-700 p-6">
-              <h4 className="text-5xl font-extrabold">235</h4>
-              <p className="text-gray-400 mt-2">Professionals</p>
-            </div>
-            <div className="border border-gray-700 p-6">
-              <h4 className="text-5xl font-extrabold">350</h4>
-              <p className="text-gray-400 mt-2">Qualified Staff</p>
             </div>
           </div>
         </div>
