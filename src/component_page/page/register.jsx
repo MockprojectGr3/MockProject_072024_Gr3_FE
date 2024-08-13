@@ -312,7 +312,7 @@ function RegisterPage() {
                 onChange={handleChange}
                 required
               />
-              I agree to the terms and conditions
+                I agree to the terms and conditions
             </label>
           </div>
           <button
@@ -367,7 +367,6 @@ function RegisterPage() {
       </div>
     </div>
   );
-}
-``;
+}``
 
 export default RegisterPage;
