@@ -1,8 +1,7 @@
 import SecurityPage from "../page/SecurityPage";
 import SecurityService from "../SecurityService";
-
 import React, { useState, useEffect } from 'react';
-import SecurityService  from '../SecurityService';
+
 const slides = [
   {
     image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbhC9tPKG69HdL4yhvHhd6J7kGb5YlQ4Y3BV0A5KGD9IqppNk3",
@@ -100,10 +99,10 @@ const HomePage = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVu8ahpDPZfClyIaGhW3VvL1sRhpEodPWtjQ&s" alt="Firefighter" className="w-full h-48 object-cover"/>
               </div>
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JUN 02, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <h4 className="text-xl font-semibold">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
             </div>
@@ -112,19 +111,19 @@ const HomePage = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDXd5ztQME-5rmKIcd1BvaVS_GSHEUYvopTg&s" alt="Firefighter" className="w-full h-48 object-cover"/>
               </div>
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JUN 02, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <h4 className="text-xl font-semibold">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JULY 10, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <h4 className="text-xl font-semibold">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
@@ -133,10 +132,10 @@ const HomePage = () => {
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JULY 10, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <h4 className="text-xl font-semibold">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
