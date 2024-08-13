@@ -1,9 +1,279 @@
+import SecurityService from "../SecurityService";
+
 import '../../style/HomePage.css'
 const HomePage = () => {
     return (
         <div>
-            Home page
+             <SecurityService/>
         </div>
     )
 }
+export default HomePage;
+import React, { useState, useEffect } from 'react';
+
+const slides = [
+  {
+    image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbhC9tPKG69HdL4yhvHhd6J7kGb5YlQ4Y3BV0A5KGD9IqppNk3",
+    title: "SECURITY SERVICES FOR YOUR BUSINESS SAFETY"
+  },
+  // Thêm các slide khác ở đây
+];
+
+const HomePage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000); // Chuyển slide mỗi 5 giây
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="bg-gray-100 text-gray-800">
+      {/* Hero Section */}
+      <section className="relative h-screen bg-cover bg-center flex items-center transition-all duration-500 ease-in-out" 
+             style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative z-10 w-full flex justify-end pr-6 h-full">
+          <div className="flex flex-col justify-center h-full text-white w-1/2" style={{ marginRight: '25px' }}>
+            <h1 className="text-4xl md:text-6xl font-bold">{slides[currentSlide].title}</h1>
+            <div className="mt-8">
+              <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded inline-block">
+                CONTACT US
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Who We Are Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto text-center">
+          <h2 className="text-sm font-semibold text-gray-500 mb-2">WHO WE ARE</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">WHEN YOU NEED BETTER SECURITY INSTALLATION</h3>
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
+            At Guardgrid Security, we are more than security providers; we are your dedicated partners in safety. 
+            Trust us to elevate your security, ensuring a fortress of protection when you need it most.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                icon: "🕵️‍♂️",
+                number: "01",
+                subtitle: "RESPONDING TO ATTACK",
+                title: "TRUSTWORTHY EXERT",
+                description: "In crisis moments, our response to attacks is swift and strategic, leveraging the expertise of our trustworthy professionals. We stand as a reliable force, committed to neutralizing threats and safeguarding your security with integrity."
+              },
+              {
+                icon: "🛡️",
+                number: "02",
+                subtitle: "EXPLORE THE TECHNIQUE",
+                title: "MANNED GUARDING",
+                description: "Manned guarding employs human security personnel to actively protect and monitor designated areas. This hands-on approach enhances security by providing a responsive and vigilant presence. It is a proactive measure to prevent and address potential security threats."
+              },
+              {
+                icon: "🚒",
+                number: "03",
+                subtitle: "EXPLORE THE FEATURES",
+                title: "SELF MOTIVATED GUARD",
+                description: "Uncover the distinctive traits of our Self-Motivated Guards – a dedicated force propelled by passion. Beyond conventional security, they embody key features such as responsibility, dedication, and a genuine commitment to ensuring your well-being."
+              }
+            ].map((item, index) => (
+              <div key={index} className="p-6 bg-white rounded-lg shadow-lg text-left relative">
+                <span className="absolute top-4 right-6 text-5xl font-normal text-gray-200">{item.number}</span>
+                <div className="flex items-center mb-4">
+                  <span className="text-4xl mr-4">{item.icon}</span>
+                </div>
+                <p className="text-xs text-gray-400 uppercase mb-1">{item.subtitle}</p>
+                <h4 className="text-lg font-semibold mb-2 uppercase">{item.title}</h4>
+                <p className="text-sm text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white px-6">
+        <div className="container mx-auto text-center">
+          <h2 className="text-sm font-semibold text-gray-500 mb-2">WHAT YOU DO</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-12">TOPLEVEL SECURITY SERVICES</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
+                title: "STATIC SECURITY",
+                description: "Static security guards maintain a visible presence at a fixed location, deterring threats and ensuring safety. They monitor entrances and conduct patrols to safeguard the assigned area."
+              },
+              {
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
+                title: "SECURITY DOG HANDLER",
+                description: "A dynamic duo of trained canines and skilled handlers. Experience the next level of security with our vigilant Security Dog Handlers, where instinct and training unite for your unparalleled protection."
+              },
+              {
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJNKtbTgOTFayf5MCAUQSIWkHASMsIJbb9g&s",
+                title: "NHS & HEALTH",
+                description: "At Guardgrid Security, we understand the delicate nature of healthcare security. Our services go beyond safeguarding physical spaces; they extend to fostering an environment of trust and well-being."
+              }
+            ].map((service, index) => (
+              <div key={index} className="flex flex-col h-full">
+                <div className="relative h-64 mb-4">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover"/>
+                </div>
+                <div className="flex-grow flex flex-col bg-black text-white p-6">
+                  <h4 className="text-xl font-semibold mb-4">{service.title}</h4>
+                  <p className="text-sm">{service.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest News & Blog */}
+      <section className="py-16 bg-gray-100 px-6">
+        <div className="container mx-auto text-center">
+          <h2 className="text-base font-semibold text-gray-500 mb-2">SECURITY ADVICES</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-12">LATEST NEWS & BLOG</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <div className="flex-shrink-0 w-full md:w-1/2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVu8ahpDPZfClyIaGhW3VvL1sRhpEodPWtjQ&s" alt="Firefighter" className="w-full h-48 object-cover"/>
+              </div>
+              <div className="bg-white p-6 text-left md:w-1/2">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                  JUN 02, 2020
+                </div>
+                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <div className="flex-shrink-0 w-full md:w-1/2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDXd5ztQME-5rmKIcd1BvaVS_GSHEUYvopTg&s" alt="Firefighter" className="w-full h-48 object-cover"/>
+              </div>
+              <div className="bg-white p-6 text-left md:w-1/2">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                  JUN 02, 2020
+                </div>
+                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <div className="bg-white p-6 text-left md:w-1/2">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                  JULY 10, 2020
+                </div>
+                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
+              </div>
+              <div className="flex-shrink-0 w-full md:w-1/2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7zFgl2EWp44sda15Fb1OZg8tqD3y0nBfIw&s" alt="Man in car" className="w-full h-48 object-cover"/>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <div className="bg-white p-6 text-left md:w-1/2">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                  JULY 10, 2020
+                </div>
+                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
+              </div>
+              <div className="flex-shrink-0 w-full md:w-1/2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAgdIyBEQnO11uvOyIXYQuvWGb6FjvGAXncA&s" alt="Man in car" className="w-full h-48 object-cover"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
+      <section className="bg-gray-100 px-6">
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/3 mb-8 md:mb-0 mr-8">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71tcXo2nxpfEEfPIW4EpMy5dzqhM2ogyoiw&s" alt="Security Advices" className="w-full h-auto" />
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-gray-700 mb-8">
+                At Guardgrid Security, we are more than security providers; we are your dedicated partners in safety. 
+                Trust us to elevate your security, ensuring a fortress of protection when you need it most.
+              </p>
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    The Experts offer & maintain security system at my office and their security staff work great. They giving my answer & security when I need Thanks for a great service.
+                  </p>
+                  <div className="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Striven Smith" className="w-10 h-10 rounded-full mr-4" />
+                    <div>
+                      <h4 className="font-semibold">STRIVEN SMITH</h4>
+                      <p className="text-sm text-gray-500">CEO OF DIGICOP</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    It has been Comfort working with this guys creating the strategy for my company and These guys are always solved my problem in a moment. This guys are real Expert and Amazing.
+                  </p>
+                  <div className="flex items-center">
+                    <img src="https://via.placeholder.com/40" alt="Elena Rusconi" className="w-10 h-10 rounded-full mr-4" />
+                    <div>
+                      <h4 className="font-semibold">ELENA RUSCONI</h4>
+                      <p className="text-sm text-gray-500">ADVISER</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR SECURITY */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto text-center">
+          <p className="text-base font-semibold text-gray-500 mb-2">OUR SECURITY</p>
+          <h3 className="text-3xl md:text-4xl font-bold">TRUSTED WORK AND PROJECTS</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8 bg-gray-900 text-white py-12">
+            <div className="border border-gray-700 p-6">
+              <h4 className="text-5xl font-extrabold">450</h4>
+              <p className="text-gray-400 mt-2">Objects Protected</p>
+            </div>
+            <div className="border border-gray-700 p-6">
+              <h4 className="text-5xl font-extrabold">125</h4>
+              <p className="text-gray-400 mt-2">Cameras Installed</p>
+            </div>
+            <div className="border border-gray-700 p-6">
+              <h4 className="text-5xl font-extrabold">235</h4>
+              <p className="text-gray-400 mt-2">Professionals</p>
+            </div>
+            <div className="border border-gray-700 p-6">
+              <h4 className="text-5xl font-extrabold">350</h4>
+              <p className="text-gray-400 mt-2">Qualified Staff</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 export default HomePage;
