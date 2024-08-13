@@ -3,6 +3,7 @@ import reactLogo from './assets/image/react.svg'
 import viteLogo from './assets/image/vite.svg'
 import axios from './util/axios'
 import './style/App.css'
+import './style/index.css'
 import RegisterPage from './component_page/page/register'
 import { Link, Outlet } from "react-router-dom";
 import Header from './component_page/layout/header'
