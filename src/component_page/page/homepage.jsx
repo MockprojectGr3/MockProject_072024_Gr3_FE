@@ -1,9 +1,10 @@
 import SecurityPage from "../page/SecurityPage";
+import SecurityService from "../SecurityService";
 
 const HomePage = () => {
     return (
         <div>
-            Home page
+            <SecurityService/>
             <SecurityPage/>
         </div>
     )
