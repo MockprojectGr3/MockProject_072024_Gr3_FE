@@ -28,7 +28,10 @@ function App() {
     <>
       <Header/>
       <Outlet />
-      <Footer/>
+      <p>
+        {/* <a href='register'>Register</a>            */}
+        <Link to={"/register"} >Register 1</Link>
+      </p>
     </>
   )
 }
