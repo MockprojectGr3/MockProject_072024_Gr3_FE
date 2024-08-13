@@ -1,6 +1,4 @@
 import SecurityPage from "../page/SecurityPage";
-import SecurityService from "../SecurityService";
-
 import React, { useState, useEffect } from 'react';
 import SecurityService  from '../SecurityService';
 const slides = [
@@ -203,6 +201,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <SecurityPage/>
     </div>
   );
 };
