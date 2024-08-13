@@ -7,7 +7,9 @@ import img6 from '../../assets/image/news6.jpg';
 import '../../style/newspage.css';
 import Footer from '../layout/Footer.jsx';
 import Header from '../layout/header.jsx';
+import { useNavigate } from 'react-router-dom';
 const NewsPage = () => {
+
     const data = [
         {
             id: 1,
@@ -46,6 +48,12 @@ const NewsPage = () => {
             img_path: img6
         }
     ]
+    const navigate = useNavigate();
+
+    const route_news_detail_id1 = () => {
+        // navigate(`/news_detail/${item}`);
+        navigate('/news_detail')
+    }
     return (
         <>
             <Header />
@@ -56,6 +64,7 @@ const NewsPage = () => {
                         return (
                             <div className="card"
                                 key={index}
+                                onClick={route_news_detail_id1}
                             >
                                 <img src={item.img_path} className="card-img-top" alt="..." />
                                 <div className="card-body">
@@ -66,7 +75,7 @@ const NewsPage = () => {
                         )
                     })
                 }
-            </div>
+            </div >
             <Footer />
         </>
     )
