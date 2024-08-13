@@ -202,6 +202,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <SecurityPage/>
     </div>
   );
 };

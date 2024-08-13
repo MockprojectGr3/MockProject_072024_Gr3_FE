@@ -4,7 +4,7 @@ function SecurityPage() {
   return (
     <div className="max-w-6xl mx-auto p-5">
       <div className="text-center mb-5">
-        <h3>Our Security</h3>
+        <h3 className="text-sm font-semibold text-gray-500 mb-2">Our Security</h3>
         <h2 className="font-bold text-3xl">Trusted Work and Projects</h2>
       </div>
       <div className="flex flex-wrap justify-between bg-black p-5">
