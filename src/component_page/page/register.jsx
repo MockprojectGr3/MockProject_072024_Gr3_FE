@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import car from "../../assets/image/img.png";
 function RegisterPage() {
   const [form, setForm] = useState({
@@ -38,6 +38,7 @@ function RegisterPage() {
   return (
     <div
       style={{
+        marginTop: "40px",
         maxWidth: "1000px",
         margin: "0 auto",
         padding: "20px",
@@ -46,7 +47,7 @@ function RegisterPage() {
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
         display: "flex",
         alignItems: "flex-start",
-        textAlign:"left"
+        textAlign: "left",
       }}
     >
       <div
@@ -55,13 +56,13 @@ function RegisterPage() {
           paddingRight: "20px",
         }}
       >
-        <h1>Sign Up</h1>
+        <h1 className="text-xl font-semibold">Sign Up</h1>
         <form
           onSubmit={handleSubmit}
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop:"20px"
+            marginTop: "20px",
           }}
         >
           <div style={{ marginBottom: "15px" }}>
@@ -311,7 +312,7 @@ function RegisterPage() {
                 onChange={handleChange}
                 required
               />
-                I agree to the terms and conditions
+              I agree to the terms and conditions
             </label>
           </div>
           <button
@@ -328,24 +329,23 @@ function RegisterPage() {
             Sign Up
           </button>
 
-          <button
-            type="button"
+          <Link
+            to="/login"
             style={{
+              display: "inline-block",
               padding: "10px 20px",
               backgroundColor: "#000000",
               color: "#fff",
               border: "none",
               borderRadius: "4px",
+              textDecoration: "none", 
               cursor: "pointer",
               marginTop: "10px",
-            }}
-            onClick={() => {
-                <Link to={"login"}>Login</Link>
-              console.log("Back to login");
+              textAlign:"center",
             }}
           >
             Back to Login
-          </button>
+          </Link>
         </form>
       </div>
       <div
@@ -367,6 +367,7 @@ function RegisterPage() {
       </div>
     </div>
   );
-}``
+}
+``;
 
 export default RegisterPage;
