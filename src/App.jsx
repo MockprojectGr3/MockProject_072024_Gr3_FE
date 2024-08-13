@@ -7,6 +7,7 @@ import './style/index.css'
 import RegisterPage from './component_page/page/register'
 import { Link, Outlet } from "react-router-dom";
 
+import Footer from './component_page/layout/Footer'
 import Header from './component_page/layout/header'
 
 function App() {
@@ -25,9 +26,8 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <Outlet />
-      
       <p>
         {/* <a href='register'>Register</a>            */}
         <Link to={"/register"} >Register 1</Link>
