@@ -80,32 +80,8 @@ label{
     .container-feedback{
         width: auto;
     }
-    .col-text{
-
-    }
     .row{
         font-size: 20px;
-    }
-    label{
-
-    }
-    .form-control{
-
-    }
-    .textarea-icon{
-
-    }
-    .text-link{
-
-    }
-    .title{
-
-    }
-    .btn-primary{
-
-    }
-    .form-check-label{
-
     }
     .description{
         font-size: 20px;
@@ -119,23 +95,13 @@ label{
     .container-feedback{
         width: auto;
     }
-    .col-text{
 
-    }
     .row{
         font-size: 20px;
     }
-    label{
 
-    }
     .form-control{
         line-height: 2;
-    }
-    .textarea-icon{
-
-    }
-    .text-link{
-
     }
     .title{
         font-size: 26px;
@@ -172,23 +138,13 @@ label{
     .container-feedback{
         width: auto;
     }
-    .col-text{
 
-    }
     .row{
         font-size: 20px;
     }
-    label{
 
-    }
     .form-control{
         line-height: 2;
-    }
-    .textarea-icon{
-
-    }
-    .text-link{
-
     }
     .title{
         font-size: 26px;
@@ -228,21 +184,15 @@ label{
         width: auto;
         gap: 15px;
     }
-    .col-text{
 
-    }
     .row{
         font-size: 14px;
     }
-    label{
 
-    }
     .form-control{
         line-height: 0.5;
     }
-    .textarea-icon{
 
-    }
     .text-link{
         font-size: 11px;
     }
@@ -275,9 +225,6 @@ label{
     .btn-primary{
         line-height: 1.5;
     }
-    .form-check-label{
-
-    }
 }
 
 
@@ -287,20 +234,13 @@ label{
         width: auto;
         gap: 15px;
     }
-    .col-text{
 
-    }
     .row{
         font-size: 14px;
     }
-    label{
 
-    }
     .form-control{
         line-height: 0.5;
-    }
-    .textarea-icon{
-
     }
     .text-link{
         font-size: 11px;
@@ -333,7 +273,5 @@ label{
     .btn-primary{
         line-height: 1.5;
     }
-    .form-check-label{
 
-    }
 }

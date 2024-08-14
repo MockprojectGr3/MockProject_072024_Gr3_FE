@@ -21,6 +21,7 @@ import Service from './component_page/page/service.jsx'
 import ChooseServices from './component_page/page/choose_services.jsx'
 import News_DeTail_Page from './component_page/page/news_detail.jsx'
 import FeedbackPage from './component_page/page/feedback.jsx'
+import Service_Detail_Page from './component_page/page/service_detail.jsx'
 
 
 const router = createBrowserRouter([
@@ -88,6 +89,14 @@ const router = createBrowserRouter([
     path: "feedback",
     element: <FeedbackPage />
   },
+  {
+    path: "service_detail",
+    element: <Service_Detail_Page />
+  },
+  // {
+  //   path: "service_detail",
+  //   element: <Service_Detail_Page />
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
