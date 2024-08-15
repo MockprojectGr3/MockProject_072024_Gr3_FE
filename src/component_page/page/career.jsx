@@ -139,7 +139,6 @@ const Career = () => {
             <div className='pb-7 px-32' ref={applyForm}>
                 <h3 className='items-center text-center py-8 text-2xl font-semibold'>Online application</h3>
                 <form className="border border-gray-800 rounded-lg px-5 py-4 grid grid-cols-1 sm:grid-cols-2 gap-x-48 gap-y-2">
-                    {/* Name */}
                     <div className="flex flex-col gap-y-2">
                         <label className="text-gray-600">Your Name</label>
                         <input
@@ -149,7 +148,6 @@ const Career = () => {
                         />
                     </div>
 
-                    {/* Email */}
                     <div className="flex flex-col gap-y-2">
                         <label className="text-gray-600">Your Email</label>
                         <input
@@ -159,7 +157,6 @@ const Career = () => {
                         />
                     </div>
 
-                    {/* Address */}
                     <div className="flex flex-col gap-y-2">
                         <label className="text-gray-600">Your Address</label>
                         <input
