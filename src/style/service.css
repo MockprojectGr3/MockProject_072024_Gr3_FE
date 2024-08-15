@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-    height: 1424px;
+    height: 1524px;
 }
 .sv-list{
     display: inline-grid;
@@ -20,6 +20,10 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.max-w-sm:hover{
+    cursor: pointer;
 }
 .mb-2{
     font-size: 32px;
@@ -56,6 +60,9 @@
       padding: 10px 0px;
       /* margin: 10px 0px; */
       margin-bottom: 10px;
+}
+.item:hover{
+    cursor: pointer;
 }
 .lst-info{
     padding-left: 10px;
