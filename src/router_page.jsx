@@ -25,6 +25,7 @@ import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
