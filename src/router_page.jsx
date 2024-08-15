@@ -21,14 +21,13 @@ import Service from './component_page/page/service.jsx'
 import ChooseServices from './component_page/page/choose_services.jsx'
 import News_DeTail_Page from './component_page/page/news_detail.jsx'
 import FeedbackPage from './component_page/page/feedback.jsx'
+import Training from './component_page/page/training.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    // element: <div>Hello world!</div>,
-
+    element: <App />,  // App chứa Header và Footer
     children: [
       {
         index: true,
@@ -37,62 +36,61 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <RegisterPage />
+      },
+      {
+        path: "login",
+        element: <LoginPage />
+      },
+      {
+        path: "forget-password",
+        element: <ForgetPassword />
+      },
+      {
+        path: "email-sent",
+        element: <EmailSent />
+      },
+      {
+        path: "reset-password",
+        element: <ResetPassword />
+      },
+      {
+        path: "terms-and-conditions",
+        element: <TermsAndConditions />
+      },
+      {
+        path: "news",
+        element: <NewsPage />
+      },
+      {
+        path: "contact",
+        element: <ContactPage />
+      },
+      {
+        path: "service",
+        element: <Service />
+      },
+      {
+        path: "choose-services",
+        element: <ChooseServices />
+      },
+      {
+        path: "news_detail",
+        element: <News_DeTail_Page />
+      },
+      {
+        path: "feedback",
+        element: <FeedbackPage />
+      },
+      {
+        path: "training",
+        element: <Training />
       }
     ]
-  },
-  {
-    path: "register",
-    element: <RegisterPage />
-  },
-  {
-    path: "login",
-    element: <LoginPage />
-  },
-  {
-    path: 'forget-password',
-    element: <ForgetPassword />
-  },
-  {
-    path: 'email-sent',
-    element: <EmailSent />
-  },
-  {
-    path: 'reset-password',
-    element: <ResetPassword />
-  },
-  {
-    path: 'terms-and-conditions',
-    element: <TermsAndConditions />
-  },
-  {
-    path: "news",
-    element: <NewsPage />
-  },
-  {
-    path: "contact",
-    element: <ContactPage />
-  },
-  {
-    path: "service",
-    element: <Service />
-  },
-  {
-    path: "choose-services",
-    element: <ChooseServices />
-  },
-  {
-    path: "news_detail",
-    element: <News_DeTail_Page />
-  },
-  {
-    path: "feedback",
-    element: <FeedbackPage />
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
