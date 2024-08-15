@@ -24,6 +24,7 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
+import Career from './component_page/page/career.jsx'
 
 
 const router = createBrowserRouter([
@@ -94,8 +95,13 @@ const router = createBrowserRouter([
       {
         path: "faq",
         element: <FAQ_Page />
+      },
+      {
+        path: "career",
+        element: <Career />
       }
     ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
