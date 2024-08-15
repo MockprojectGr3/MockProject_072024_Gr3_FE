@@ -22,6 +22,7 @@ import ChooseServices from './component_page/page/choose_services.jsx'
 import News_DeTail_Page from './component_page/page/news_detail.jsx'
 import FeedbackPage from './component_page/page/feedback.jsx'
 import Training from './component_page/page/training.jsx'
+import TrainingDetail from './component_page/page/training_detail.jsx'
 
 
 const router = createBrowserRouter([
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: "training",
         element: <Training />
+      },
+      {
+        path: "training-detail",
+        element: <TrainingDetail />
       }
     ]
   }
