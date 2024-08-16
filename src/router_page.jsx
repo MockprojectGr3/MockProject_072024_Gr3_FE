@@ -29,73 +29,78 @@ import FAQ_Page from './component_page/page/faq.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,  // App chứa Header và Footer
+    element: <App />, // App chứa Header và Footer
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <HomePage />,
       },
       {
         path: "register",
-        element: <RegisterPage />
+        element: <RegisterPage />,
       },
       {
         path: "login",
-        element: <LoginPage />
+        element: <LoginPage />,
       },
       {
         path: "forget-password",
-        element: <ForgetPassword />
+        element: <ForgetPassword />,
+      },
+      {
+        path: "about",
+        element: <EmailSent />,
       },
       {
         path: "email-sent",
-        element: <EmailSent />
+        element: <EmailSent />,
       },
       {
         path: "reset-password",
-        element: <ResetPassword />
+        element: <ResetPassword />,
       },
       {
         path: "terms-and-conditions",
-        element: <TermsAndConditions />
+        element: <TermsAndConditions />,
       },
       {
         path: "news",
-        element: <NewsPage />
+        element: <NewsPage />,
       },
       {
         path: "contact",
-        element: <ContactPage />
+        element: <ContactPage />,
       },
       {
         path: "service",
-        element: <Service />
+        element: <Service />,
       },
       {
         path: "choose-services",
-        element: <ChooseServices />
+        element: <ChooseServices />,
       },
       {
         path: "news_detail",
-        element: <News_DeTail_Page />
+        element: <News_DeTail_Page />,
       },
       {
         path: "feedback",
-        element: <FeedbackPage />
+        element: <FeedbackPage />,
       },
       {
         path: "training",
-        element: <Training />
+        element: <Training />,
       },
       {
         path: "service_detail",
-        element: <Service_Detail_Page />
+        element: <Service_Detail_Page />,
       },
       {
         path: "faq",
-        element: <FAQ_Page />
-      }
-    ]
+        element: <FAQ_Page />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
