@@ -32,7 +32,7 @@ function OurService() {
           <hr className="text-gray-400 w-36" />
         </div>
         <h2 style={{ fontSize: 36 }}>OUR COMPREHENSIVE SECURITY SERVICES</h2>
-        <div className="flex flex-row flex-wrap justify-between">
+        <div className="flex flex-row flex-wrap justify-between mt-4">
           {mockData.map((item) => (
             <div
               key={item.id}
