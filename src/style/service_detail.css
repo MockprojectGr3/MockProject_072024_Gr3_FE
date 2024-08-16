@@ -1,0 +1,160 @@
+.service-detail-container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    height: auto;
+}
+.service-intro{
+    width: 100%;
+    background-color: #1E0C06;
+    height: 600px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    gap: 5px;
+}
+.service-text, .title, .caption{
+    color: white;
+    text-align: justify;
+}
+.service-text{
+    width: 50%;
+    display: grid;
+    height: 50%;
+}
+.service-img{
+    width: 50%;
+    overflow: hidden;
+}
+.img1, .img2, .img3{
+    position: absolute;
+    width: 25%;
+    height: 50%;
+    border-radius: 30px;
+}
+.bg-img1{
+    position: absolute;
+    background-color: #1e0c06;
+    width: 25%;
+    height: 45%;
+    top: 40%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    z-index: 2;
+}
+.img1{ 
+    /* top: 85px; */
+    width: 22%;
+    height: 40%;
+    top: 39%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 3;
+}
+.img2{
+    width: 16%;
+    height: 30%;
+    top: 5%;
+    left: 81%;
+    z-index: 0;
+}
+
+.img3{
+    width: 16%;
+    height: 30%;
+    top: 65%;
+    left: 81%;
+    z-index: 0;
+}
+
+.carousel-button {
+    color: #f49d1c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.btn-select {
+    background-color: #4A3AFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 56px;
+    line-height: 1.25rem;
+    font-size: 20px;
+    border: none;
+}
+h1{
+    margin: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.carousel-status{
+    top: 4% !important;
+    right: 8% !important;
+}
+img{
+    image-rendering: pixelated;
+}
+/* Hiển thị cho SP*/
+@media only screen and (max-width: 640px) and (min-width: 280px){
+    img{
+        image-rendering: pixelated;
+    }
+    .img1{ 
+        /* top: 85px; */
+        width: 22%;
+        height: 40%;
+        top: 39%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+        max-height: 100%;
+        max-width: 100%;
+        z-index: 3;
+    }
+    .img2{
+        width: 16%;
+        height: 30%;
+        top: 5%;
+        left: 81%;
+        z-index: 0;
+    }
+    
+    .img3{
+        width: 16%;
+        height: 30%;
+        top: 65%;
+        left: 81%;
+        z-index: 0;
+    }
+}

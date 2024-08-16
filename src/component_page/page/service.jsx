@@ -3,6 +3,8 @@ import logopepsi from '../../assets/image/Pepsi-Logo.png';
 import { CheckOutlined, ImportOutlined } from '@ant-design/icons';
 import Header from '../layout/header.jsx';
 import Footer from '../layout/Footer.jsx';
+import { useNavigate } from 'react-router-dom';
+
 const Service = () => {
     const listservice = [
         {
@@ -30,6 +32,11 @@ const Service = () => {
             img_path: logopepsi
         }
     ]
+    const navigate = useNavigate();
+    const handle_redirect = (id) => {
+        // console.log('Check id: ', id)
+        navigate('/service_detail')
+    }
     return (
         <>
             <Header />
@@ -41,6 +48,7 @@ const Service = () => {
                             return (
                                 <div className="max-w-sm p-6 "
                                     key={index}
+                                    onClick={() => handle_redirect(item.id)}
                                 >
                                     <div className='img-sv'>
                                         <img src={item.img_path} width={'100%'} />
@@ -58,22 +66,30 @@ const Service = () => {
                 </div>
                 <div className='info-sv'>
                     <div className='list-item'>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
                             <span className='text'>Shipping protection
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
                             <span className='text'>Custodi filios tuos
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
                             <span className='text'>Tuam salutem cum monitored aut minati
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
                             <span className='text'>Protection from surveillance and threats
                             </span>
