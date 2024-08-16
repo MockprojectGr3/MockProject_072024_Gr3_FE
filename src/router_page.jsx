@@ -27,6 +27,8 @@ import AboutUs from './component_page/page/aboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
+import Career from './component_page/page/career.jsx'
+import Payment from './component_page/page/payment.jsx'
 
 const router = createBrowserRouter([
   {
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <AboutUs/>,
+        element: <AboutUs />,
       },
       {
         path: "email-sent",
@@ -108,9 +110,17 @@ const router = createBrowserRouter([
       {
         path: "equipment",
         element: <Equipment_Page />
-       }
+      },
+      {
+        path: "career",
+        element: <Career />
+      },
+      {
+        path: "payment",
+        element: <Payment />
+      }
     ]
-}]);
+  }]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

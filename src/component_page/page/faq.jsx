@@ -31,6 +31,7 @@ function FAQ_Page() {
                             <Accordion.Body style={{ textAlign: 'justify' }}>{item.answer}</Accordion.Body>
                         </Accordion.Item>
                     ))}
+                </Accordion>
                 <Accordion>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header
