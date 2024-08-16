@@ -26,6 +26,7 @@ import Training from './component_page/page/training.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
+import ABoutUs from './component_page/page/aboutUs.jsx'
 
 
 
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <EmailSent />,
+        element: <ABoutUs />,
       },
       {
         path: "email-sent",
@@ -97,6 +98,8 @@ const router = createBrowserRouter([
       {
         path: "training-detail",
         element: <TrainingDetail />
+      },
+      {
         path: "service_detail",
         element: <Service_Detail_Page />,
       },
