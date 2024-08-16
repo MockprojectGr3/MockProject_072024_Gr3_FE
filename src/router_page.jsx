@@ -27,6 +27,7 @@ import AboutUs from './component_page/page/aboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
+import ABoutUs from './component_page/page/aboutUs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -103,7 +104,7 @@ const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <FAQ_Page />
+        element: <FAQ_Page />,
       },
       {
         path: "equipment",
