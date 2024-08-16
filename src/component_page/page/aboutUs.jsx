@@ -1,6 +1,7 @@
 import AboutGuard from "../AboutGuard";
 import ExpertsSecurity from "./ExpertsSecurity";
 import OurService from "./OurService";
+import ProfessionalTeam from "./ProfessionalTeam";
 
 function AboutUs() {
   return (
@@ -13,6 +14,9 @@ function AboutUs() {
       </div>
       <div className="mt-5">
         <ExpertsSecurity />
+      </div>
+      <div className="mt-5">
+        <ProfessionalTeam/>
       </div>
     </div>
   );
