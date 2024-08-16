@@ -29,6 +29,7 @@ import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
 import Career from './component_page/page/career.jsx'
 import Payment from './component_page/page/payment.jsx'
+import ABoutUs from './component_page/page/aboutUs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -105,7 +106,7 @@ const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <FAQ_Page />
+        element: <FAQ_Page />,
       },
       {
         path: "equipment",
