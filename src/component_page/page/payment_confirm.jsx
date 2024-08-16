@@ -95,4 +95,3 @@ const PaymentConfirm = ({ open, onClose }) => {
 }
 
 export default PaymentConfirm;
-
