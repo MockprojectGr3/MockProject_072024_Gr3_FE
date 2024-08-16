@@ -71,7 +71,7 @@
     width: 30%;
     height: 100%;
 }
-.text{
+.su-text{
     display: grid;
     bottom: 10px;
     text-align: justify;
@@ -93,11 +93,11 @@
     margin-top: 10px;
     text-align: justify;
 }
-.caption{
+.su-caption{
     color: #2A4AF4;
     font-size: 20px;
 }
-.title{
+.su-title{
     color: #266F8E;
     font-weight: bold;
     font-size: 30px;
@@ -110,7 +110,7 @@
     margin-right: 10px;
     margin-bottom: 20px;
 }
-.subtitle{
+.su-subtitle{
     color: #9694E7;
     font-size: 20px;
 }
@@ -211,20 +211,20 @@ h2{
     .icon{
        width: 40%;
     }
-    .text{
+    .su-text{
         font-size: 12px;
         margin-right: 5px;
     } 
-    .caption{
+    .su-caption{
         font-size: 16px;
     }
-    .title{
+    .su-title{
         font-size: 15px;
     }
     .customicon{
       font-size: 10px;
     }
-    .subtitle{
+    .su-subtitle{
         text-align: justify;
         font-size: 15px;
     }
@@ -277,20 +277,20 @@ h2{
     .icon{
        width: 40%;
     }
-    .text{
+    .su-text{
         font-size: 12px;
         margin-right: 5px;
     }
-    .caption{
+    .su-caption{
         font-size: 16px;
     }
-    .title{
+    .su-title{
         font-size: 15px;
     }
     .customicon{
       font-size: 10px;
     }
-    .subtitle{
+    .su-subtitle{
         text-align: justify;
         font-size: 15px;
     }
@@ -349,20 +349,20 @@ h2{
     .icon{
         width: 40%;
     }
-    .text{
+    .su-text{
         font-size: 11px;
         margin-right: 10px;
     }
-    .caption{
+    .su-caption{
         font-size: 14px;
     }
-    .title{
+    .su-title{
         font-size: 13px;
     }
     .customicon{
         font-size: 10px;
     }
-    .subtitle{
+    .su-subtitle{
         font-size: 12px;
     }
     .btn-primary{

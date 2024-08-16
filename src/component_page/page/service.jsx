@@ -70,55 +70,55 @@ const Service = () => {
                             onClick={handle_redirect}
                         >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Shipping protection
+                            <span className='su-text'>Shipping protection
                             </span>
                         </div>
                         <div className='item'
                             onClick={handle_redirect}
                         >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Custodi filios tuos
+                            <span className='su-text'>Custodi filios tuos
                             </span>
                         </div>
                         <div className='item'
                             onClick={handle_redirect}
                         >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Tuam salutem cum monitored aut minati
+                            <span className='su-text'>Tuam salutem cum monitored aut minati
                             </span>
                         </div>
                         <div className='item'
                             onClick={handle_redirect}
                         >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Protection from surveillance and threats
+                            <span className='su-text'>Protection from surveillance and threats
                             </span>
                         </div>
                     </div>
                     <div className='info'>
                         <div className='lst-info'>
-                            <span className='caption'>
+                            <span className='su-caption'>
                                 <span style={{ fontWeight: 'bold' }}>OUR</span> SERVICES
                             </span>
                             <br />
-                            <span className='title'>
+                            <span className='su-title'>
                                 Fideles comites fiamus
                             </span><br />
                             <div className='mark-info'>
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Turma satellitum bene exercitata est
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Processus muneris professionalis
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Commendatio ad salutem et securitatem
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Auctoritates auctorum et diversa officia
                                 </span><br />
 

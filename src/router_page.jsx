@@ -23,7 +23,10 @@ import News_DeTail_Page from './component_page/page/news_detail.jsx'
 import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
+import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
+import Equipment_Page from './component_page/page/equipment.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -92,6 +95,8 @@ const router = createBrowserRouter([
         element: <Training />,
       },
       {
+        path: "training-detail",
+        element: <TrainingDetail />
         path: "service_detail",
         element: <Service_Detail_Page />,
       },
