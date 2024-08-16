@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { IoClose } from "react-icons/io5";
 import PaymentSuccess from './payment_success';
 
-const PaymentConfirm = (isVisible) => {
+const PaymentConfirm = ({ open, onClose }) => {
 
     const [showSuccess, setShowSuccess] = useState(false);
 
-    if (!isVisible.isVisible) return null;
+    PaymentConfirm.propTypes = {
+        open: PropTypes.bool.isRequired,
+        onClose: PropTypes.func.isRequired,
+    };
+
+    if (!open) return null;
 
     return (
         <>
@@ -14,7 +20,7 @@ const PaymentConfirm = (isVisible) => {
                 <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl p-8">
                     <div className='flex justify-between'>
                         <h2 className="text-xl font-bold mb-6">Notification</h2>
-                        <IoClose className='text-2xl m-0 cursor-pointer' />
+                        <IoClose className='text-2xl m-0 cursor-pointer' onClick={onClose} />
                     </div>
                     <div className='grid grid-cols-2'>
                         <div className='grid-cols-1'>
@@ -78,12 +84,12 @@ const PaymentConfirm = (isVisible) => {
                     </div>
                     {/* Buttons */}
                     <div className="flex justify-end mt-10 space-x-4">
-                        <button className="px-4 py-2 bg-gray-300 hover:bg-gray-200 rounded">Cancel</button>
+                        <button className="px-4 py-2 bg-gray-300 hover:bg-gray-200 rounded" onClick={onClose}>Cancel</button>
                         <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded" onClick={() => setShowSuccess(true)}>Submit</button>
                     </div>
                 </div>
             </div>
-            <PaymentSuccess isShowSuccess={showSuccess} />
+            <PaymentSuccess isShowSuccess={showSuccess} onClose={() => setShowSuccess(false)} />
         </>
     )
 }
