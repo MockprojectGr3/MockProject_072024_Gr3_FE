@@ -30,6 +30,7 @@ import Equipment_Page from './component_page/page/equipment.jsx'
 import Career from './component_page/page/career.jsx'
 import Payment from './component_page/page/payment.jsx'
 import ABoutUs from './component_page/page/aboutUs.jsx'
+import Service_Tracking from './component_page/page/servie_tracking.jsx'
 
 const router = createBrowserRouter([
   {
@@ -119,7 +120,11 @@ const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment />
-      }
+      },
+      {
+        path: "service-tracking",
+        element: <Service_Tracking />
+      },
     ]
   }]);
 

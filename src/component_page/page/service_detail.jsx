@@ -1,5 +1,3 @@
-import Footer from "../layout/Footer";
-import Header from "../layout/header";
 import '../../style/service_detail.css';
 import img from '../../assets/image/news6.jpg';
 import img1 from '../../assets/image/news2.jpg';
@@ -15,7 +13,6 @@ const Service_Detail_Page = () => {
     }
     return (
         <>
-            <Header />
             <div className="service-detail-container">
                 <div className="service-intro">
                     <div className="service-text">
@@ -91,7 +88,6 @@ const Service_Detail_Page = () => {
                     </div>
                 </Carousel>
             </div>
-            <Footer />
         </>
     )
 }

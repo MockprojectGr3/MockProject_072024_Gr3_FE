@@ -1,5 +1,3 @@
-import Footer from "../layout/Footer";
-import Header from "../layout/header";
 import '../../style/equipment.css';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from "react";
@@ -149,6 +147,7 @@ const listitem = {
 function Items({ currentItems }) {
     return (
         <div className="listitem">
+            <i class="fas fa-sort-amount-up-alt"></i>&nbsp;&nbsp; <i class="fas fa-sort-amount-down"></i>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -170,7 +169,7 @@ function Items({ currentItems }) {
                             <td>{item.description}</td>
                             <td>{item.progress}</td>
                             <td>
-                                <span className={`btn ${item.severity === 'intact' ? 'btn-success' : 'btn-danger'}`} style={{ width: '50%' }}>
+                                <span className={`btn ${item.severity === 'intact' ? 'btn-success' : 'btn-danger'}`} style={{ width: '100%' }}>
                                     {item.severity}
                                 </span>
 
@@ -230,14 +229,10 @@ function PaginatedItems({ itemsPerPage }) {
 const Equipment_Page = () => {
     return (
         <>
-            <Header />
             <div className="equip-container">
                 {/* Panigate */}
                 <PaginatedItems itemsPerPage={4} />
             </div>
-
-
-            <Footer />
         </>
     )
 }

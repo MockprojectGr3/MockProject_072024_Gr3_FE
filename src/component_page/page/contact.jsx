@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button, Form, Grid, Input, InputNumber } from 'antd';
-import Header from '../layout/header';
-import Footer from '../layout/Footer';
 const layout = {
     labelCol: {
         span: 8,
@@ -29,11 +27,10 @@ const onFinish = (values) => {
 };
 const ContactPage = () => (
     <>
-        <Header />
         <h1
             style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '32px' }}
         >QUOTE REQUEST FORM</h1>
-        
+
         <Form
             {...layout}
             name="nest-messages"
@@ -100,8 +97,6 @@ const ContactPage = () => (
                 </Button>
             </Form.Item>
         </Form>
-        <Footer />
-
     </>
 
 );

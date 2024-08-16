@@ -1,8 +1,7 @@
 import '../../style/service.css';
 import logopepsi from '../../assets/image/Pepsi-Logo.png';
 import { CheckOutlined, ImportOutlined } from '@ant-design/icons';
-import Header from '../layout/header.jsx';
-import Footer from '../layout/Footer.jsx';
+
 import { useNavigate } from 'react-router-dom';
 
 const Service = () => {
@@ -39,7 +38,6 @@ const Service = () => {
     }
     return (
         <>
-            <Header />
             <div className='sv-container'>
                 <h1 style={{ marginBottom: '35px', fontSize: '30px' }}>SERVICES</h1>
                 <div className='sv-list'>
@@ -130,9 +128,8 @@ const Service = () => {
 
                     </div>
                 </div>
-
             </div >
-            <Footer />
+
         </>
     )
 }
