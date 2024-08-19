@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import PaymentConfirm from './payment_confirm.jsx';
 
-function Payment() {
+const Payment = () => {
 
     const [showConfirm, setShowConfirm] = useState(false);
 
@@ -104,7 +104,7 @@ function Payment() {
                     </div>
                 </form>
             </div>
-            <PaymentConfirm isVisible={showConfirm} />
+            <PaymentConfirm open={showConfirm} onClose={() => setShowConfirm(false)} />
         </>
     );
 }
