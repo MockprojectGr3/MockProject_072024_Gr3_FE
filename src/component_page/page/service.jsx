@@ -1,8 +1,9 @@
 import '../../style/service.css';
 import logopepsi from '../../assets/image/Pepsi-Logo.png';
 import { CheckOutlined, ImportOutlined } from '@ant-design/icons';
-import Header from '../layout/header.jsx';
-import Footer from '../layout/Footer.jsx';
+
+import { useNavigate } from 'react-router-dom';
+
 const Service = () => {
     const listservice = [
         {
@@ -30,9 +31,13 @@ const Service = () => {
             img_path: logopepsi
         }
     ]
+    const navigate = useNavigate();
+    const handle_redirect = (id) => {
+        // console.log('Check id: ', id)
+        navigate('/service_detail')
+    }
     return (
         <>
-            <Header />
             <div className='sv-container'>
                 <h1 style={{ marginBottom: '35px', fontSize: '30px' }}>SERVICES</h1>
                 <div className='sv-list'>
@@ -41,6 +46,7 @@ const Service = () => {
                             return (
                                 <div className="max-w-sm p-6 "
                                     key={index}
+                                    onClick={() => handle_redirect(item.id)}
                                 >
                                     <div className='img-sv'>
                                         <img src={item.img_path} width={'100%'} />
@@ -58,51 +64,59 @@ const Service = () => {
                 </div>
                 <div className='info-sv'>
                     <div className='list-item'>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Shipping protection
+                            <span className='su-text'>Shipping protection
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Custodi filios tuos
+                            <span className='su-text'>Custodi filios tuos
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Tuam salutem cum monitored aut minati
+                            <span className='su-text'>Tuam salutem cum monitored aut minati
                             </span>
                         </div>
-                        <div className='item'>
+                        <div className='item'
+                            onClick={handle_redirect}
+                        >
                             <img className='icon' src={logopepsi} width={'120px'} />
-                            <span className='text'>Protection from surveillance and threats
+                            <span className='su-text'>Protection from surveillance and threats
                             </span>
                         </div>
                     </div>
                     <div className='info'>
                         <div className='lst-info'>
-                            <span className='caption'>
+                            <span className='su-caption'>
                                 <span style={{ fontWeight: 'bold' }}>OUR</span> SERVICES
                             </span>
                             <br />
-                            <span className='title'>
+                            <span className='su-title'>
                                 Fideles comites fiamus
                             </span><br />
                             <div className='mark-info'>
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Turma satellitum bene exercitata est
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Processus muneris professionalis
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Commendatio ad salutem et securitatem
                                 </span><br />
                                 <CheckOutlined className='customicon' />
-                                <span className='subtitle'>
+                                <span className='su-subtitle'>
                                     Auctoritates auctorum et diversa officia
                                 </span><br />
 
@@ -114,9 +128,8 @@ const Service = () => {
 
                     </div>
                 </div>
-
             </div >
-            <Footer />
+
         </>
     )
 }
