@@ -5,8 +5,6 @@ import img4 from '../../assets/image/news4.jpg';
 import img5 from '../../assets/image/news5.jpg';
 import img6 from '../../assets/image/news6.jpg';
 import '../../style/newspage.css';
-import Footer from '../layout/Footer.jsx';
-import Header from '../layout/header.jsx';
 import { useNavigate } from 'react-router-dom';
 const NewsPage = () => {
 
@@ -56,7 +54,6 @@ const NewsPage = () => {
     }
     return (
         <>
-            <Header />
             <h1 style={{ textAlign: 'center', margin: '30px 0px', fontSize: '30px' }}>NEWS</h1>
             <div className="card-container">
                 {
@@ -76,7 +73,6 @@ const NewsPage = () => {
                     })
                 }
             </div >
-            <Footer />
         </>
     )
 }
