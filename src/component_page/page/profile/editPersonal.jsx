@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 function Personal() {
   return (
-    <div className="max-w-2xl mt-5 mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-2xl mt-5 mx-auto p-6 bg-white shadow-lg rounded-lg mb-5">
       <div className="border-2 border-gray-300 p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">Personal Information</h2>
         <div>

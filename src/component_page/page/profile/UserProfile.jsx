@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Profile() {
   return (
-    <div className="max-w-2xl mt-5 mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-2xl mt-5 mx-auto p-6 bg-white shadow-lg rounded-lg mb-5">
       <div className="flex flex-col items-center mb-6">
         <img
           src={img}

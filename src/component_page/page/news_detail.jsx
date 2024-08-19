@@ -1,14 +1,11 @@
 import img_news from '../../assets/image/news2.jpg';
 import '../../style/news_detail.css';
-import Footer from '../layout/Footer';
-import Header from '../layout/header';
 import avatar from '../../assets/image/news6.jpg';
 
 
 const News_DeTail_Page = () => {
     return (
         <>
-            <Header />
             <div className="container-news" style={{ textAlign: 'justify', display: 'block' }}>
                 <div className="title-news">
                     <span className="type-news">Innovation</span>
@@ -42,22 +39,17 @@ const News_DeTail_Page = () => {
                         Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information
 
                     </p>
-
-
                     <p>
                         Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
                     </p>
 
                     <p>
-
                         Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
                         Leverage agile frameworks to provide a robust synopsis for high level overviews. approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
                     </p>
 
                 </div>
             </div>
-            <Footer />
-
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import car from "../../assets/image/img.png";
-import { ArrowRightOutlined } from '@ant-design/icons'; 
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -25,7 +25,7 @@ function LoginPage() {
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">
               <div className="mb-4">
-                  Email
+                Email
                 <label className="block mb-1">
                   <input
                     type="email"
@@ -43,7 +43,7 @@ function LoginPage() {
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">
               <div className="mb-4">
-                  Password
+                Password
                 <label className="block mb-1">
                   <input
                     type="password"
@@ -58,17 +58,20 @@ function LoginPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="flex items-center justify-between mt-4">
-          <button
+            <button
               type="submit"
               className="p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center justify-center"
             >
               Login <ArrowRightOutlined className="ml-2" />
             </button>
-            <a href="#" className="text-sm text-blue-600 hover:underline ml-4">
+            <Link
+              to="/forget-password"
+              className="text-sm text-blue-600 hover:underline ml-4"
+            >
               Forgot your password?
-            </a>
+            </Link>
           </div>
 
           <Link
@@ -80,11 +83,7 @@ function LoginPage() {
         </form>
       </div>
       <div className="flex-1 flex justify-center items-center">
-        <img
-          src={car}
-          alt="Car"
-          className="w-100px h-100px rounded-lg"
-        />
+        <img src={car} alt="Car" className="w-100px h-100px rounded-lg" />
       </div>
     </div>
   );

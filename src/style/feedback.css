@@ -1,0 +1,277 @@
+.container-feedback{
+    color: black;
+    width: 1280px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: justify; 
+    gap: 25px;
+}
+.col-text{
+    width: 50%;
+    height: 500px;
+    text-align: justify;
+    display: block;
+    padding: 20px;
+}
+.row{
+    width: 50%;
+    height: 500px;
+}
+.description{
+    color: #6F6C90;
+}
+label{
+    font-weight: bold;
+}
+.form-control{
+    border-radius: 5.25rem;
+    line-height: 2.5;
+    position: relative;
+}
+.textarea-icon{
+    border-radius: 0.25rem;
+    line-height: 3;
+}
+.text-link{
+    color: #4A3AFF;
+    font-weight: bold;
+}
+.title{
+    color: black;
+    font-weight: bold;
+    font-size: 42px;
+    margin: 10px 0px;
+}
+.fa-user{
+    position: absolute;
+    top: 322px;
+    right: 390px;
+    font-size: 20px;
+    color: #A0A3BD;
+}
+.fa-mobile-alt{
+    position: absolute;
+    top: 322px;
+    right: 14px;
+    font-size: 20px;
+    color: #A0A3BD;
+}
+.fa-envelope{
+    position: absolute;
+    top: 442px;
+    right: 9px;
+    font-size: 20px;
+    color: #A0A3BD;
+}
+.btn-primary{
+    border-radius: 2.25rem;
+    background-color: #4A3AFF;
+    line-height: 2.5;
+}
+.form-check-label{
+    font-weight: normal;
+}
+/* Responsive  */
+/* Hiển thị cho PC*/
+@media only screen and (min-width: 1024px) {
+    .container-feedback{
+        width: auto;
+    }
+    .row{
+        font-size: 20px;
+    }
+    .description{
+        font-size: 20px;
+    }
+    textarea.form-control{
+        font-size: 16px;
+        line-height: inherit;
+    }
+}
+@media only screen and (max-width:1023px) and (min-width: 801px) {
+    .container-feedback{
+        width: auto;
+    }
+
+    .row{
+        font-size: 20px;
+    }
+
+    .form-control{
+        line-height: 2;
+    }
+    .title{
+        font-size: 26px;
+    }
+    .fa-user{
+        top: 540px;
+        right: 214px;
+        font-size: 18px;
+    }
+    .fa-mobile-alt{
+        top: 540px;
+        right: 18px;
+        font-size: 18px;
+    }
+    .fa-envelope{
+        top: 654px;
+        right: 22px;
+        font-size: 18px;
+    }
+    .btn-primary{
+        line-height: 1.5;
+    }
+    .description{
+        font-size: 22px;
+    }
+    textarea.form-control{
+        font-size: 14px;
+        line-height: inherit;
+    }
+}
+
+/* Hiển thị cho tablet */
+@media only screen and (max-width:800px) and (min-width: 641px) {
+    .container-feedback{
+        width: auto;
+    }
+
+    .row{
+        font-size: 20px;
+    }
+
+    .form-control{
+        line-height: 2;
+    }
+    .title{
+        font-size: 26px;
+    }
+    .fa-user{
+        position: absolute;
+        top: 460px;
+        right: 214px;
+        font-size: 16px;
+    }
+    .fa-mobile-alt{
+        position: absolute;
+        top: 460px;
+        right: 22px;
+        font-size: 16px;
+    }
+    .fa-envelope{
+        top: 580px;
+        right: 22px;
+        font-size: 16px;
+    }
+    .btn-primary{
+        line-height: 1.5;
+    }
+    .description{
+        font-size: 22px;
+    }
+    textarea.form-control{
+        font-size: 14px;
+        line-height: inherit;
+    }
+}
+
+
+@media only screen and (max-width: 640px) and (min-width: 401px){
+    .container-feedback{
+        width: auto;
+        gap: 15px;
+    }
+
+    .row{
+        font-size: 14px;
+    }
+
+    .form-control{
+        line-height: 0.5;
+    }
+
+    .text-link{
+        font-size: 11px;
+    }
+    .title{
+        font-size: 22px;
+    }
+    .description{
+        font-size: 15px;
+    }
+    .fa-user{
+        right: 16px;
+        top: 380px;
+        font-size: 16px;
+    }
+    .fa-mobile-alt{
+        top: 474px;
+        right: 16px;
+        font-size: 16px;
+    
+    }
+    .fa-envelope{
+        top: 567px;
+        right: 16px;
+        font-size: 16px;
+    }
+    textarea.form-control{
+        font-size: 14px;
+        line-height: inherit;
+    }
+    .btn-primary{
+        line-height: 1.5;
+    }
+}
+
+
+/* Hiển thị cho SP*/
+@media only screen and (max-width: 400px) and (min-width: 280px){
+    .container-feedback{
+        width: auto;
+        gap: 15px;
+    }
+
+    .row{
+        font-size: 14px;
+    }
+
+    .form-control{
+        line-height: 0.5;
+    }
+    .text-link{
+        font-size: 11px;
+    }
+    .title{
+        font-size: 22px;
+    }
+    .description{
+        font-size: 15px;
+    }
+    .fa-user{
+        right: 16px;
+        top: 269px;
+        font-size: 16px;
+    }
+    .fa-mobile-alt{
+        top: 362px;
+        right: 16px;
+        font-size: 16px;
+    }
+    .fa-envelope{
+        top: 455px;
+        right: 16px;
+        font-size: 16px;
+    }
+    textarea.form-control{
+        font-size: 14px;
+        line-height: inherit;
+    }
+    .btn-primary{
+        line-height: 1.5;
+    }
+
+}

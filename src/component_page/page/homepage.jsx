@@ -1,43 +1,12 @@
 import SecurityPage from "../page/SecurityPage";
-import React, { useState, useEffect } from 'react';
-import SecurityService  from '../SecurityService';
-const slides = [
-  {
-    image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbhC9tPKG69HdL4yhvHhd6J7kGb5YlQ4Y3BV0A5KGD9IqppNk3",
-    title: "SECURITY SERVICES FOR YOUR BUSINESS SAFETY"
-  },
-];
+import SecurityService from "../SecurityService";
+import Banner from "../page/banner";
 
 const HomePage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Chuyển slide mỗi 5 giây
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="bg-gray-100 text-gray-800">
-      {/* Hero Section */}
-      <section className="relative h-screen bg-cover bg-center flex items-center transition-all duration-500 ease-in-out" 
-             style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 w-full flex justify-end pr-6 h-full">
-          <div className="flex flex-col justify-center h-full text-white w-1/2" style={{ marginRight: '25px' }}>
-            <h1 className="text-4xl md:text-6xl font-bold">{slides[currentSlide].title}</h1>
-            <div className="mt-8">
-              <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded inline-block">
-                CONTACT US
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
+      <Banner />
       {/* Who We Are Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto text-center">
@@ -98,10 +67,10 @@ const HomePage = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVu8ahpDPZfClyIaGhW3VvL1sRhpEodPWtjQ&s" alt="Firefighter" className="w-full h-48 object-cover"/>
               </div>
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JUN 02, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <h4 className="text-xl font-semibold">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
             </div>
@@ -110,19 +79,19 @@ const HomePage = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDXd5ztQME-5rmKIcd1BvaVS_GSHEUYvopTg&s" alt="Firefighter" className="w-full h-48 object-cover"/>
               </div>
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JUN 02, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
+                <h4 className="text-xl font-semibold">GET THE OUR BEST SECURITY OUT OF SECURITY LIST</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JULY 10, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <h4 className="text-xl font-semibold">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
@@ -131,10 +100,10 @@ const HomePage = () => {
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <div className="bg-white p-6 text-left md:w-1/2">
-                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded">
                   JULY 10, 2020
                 </div>
-                <h4 className="text-xl font-semibold mb-3">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
+                <h4 className="text-xl font-semibold">LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION</h4>
                 <p className="text-blue-600 text-base font-semibold">READ MORE +</p>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
