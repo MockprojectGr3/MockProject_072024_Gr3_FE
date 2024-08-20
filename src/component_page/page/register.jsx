@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import request from "../../util/axios";
 function RegisterPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-    username: "",
-    fullname: "",
+    user_name: "",
+    full_name: "",
     email: "",
     password: "",
-    rePassword: "",
     phone: "",
-    dob: "",
+    day_of_birth: "",
     gender: "",
-    country: "",
-    state: "",
-    city: "",
-    terms: false,
+    address_id: "1",
+    company_id: "2",
+    role: "customer",
   });
 
   const handleChange = (e) => {
@@ -31,8 +31,22 @@ function RegisterPage() {
       alert("Passwords do not match!");
       return;
     }
-    // Handle form submission logic here
-    console.log("Form submitted:", form);
+    const registerRequest = async () => {
+      await request({
+        method: "post",
+        serverType: "node",
+        data: form,
+        apiEndpoint: "api/register",
+        onSuccess: () => {
+          alert("Successfully Register");
+          navigate("/login");
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      });
+    };
+    registerRequest();
   };
 
   return (
@@ -70,8 +84,8 @@ function RegisterPage() {
               User Name
               <input
                 type="text"
-                name="username"
-                value={form.username}
+                name="user_name"
+                value={form.user_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -89,8 +103,8 @@ function RegisterPage() {
               Full Name
               <input
                 type="text"
-                name="fullname"
-                value={form.fullname}
+                name="full_name"
+                value={form.full_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -154,8 +168,8 @@ function RegisterPage() {
                   Date of Birth
                   <input
                     type="date"
-                    name="dob"
-                    value={form.dob}
+                    name="day_of_birth"
+                    value={form.day_of_birth}
                     onChange={handleChange}
                     required
                     style={{
@@ -312,7 +326,7 @@ function RegisterPage() {
                 onChange={handleChange}
                 required
               />
-                I agree to the terms and conditions
+              I agree to the terms and conditions
             </label>
           </div>
           <button
@@ -338,10 +352,10 @@ function RegisterPage() {
               color: "#fff",
               border: "none",
               borderRadius: "4px",
-              textDecoration: "none", 
+              textDecoration: "none",
               cursor: "pointer",
               marginTop: "10px",
-              textAlign:"center",
+              textAlign: "center",
             }}
           >
             Back to Login
@@ -367,6 +381,7 @@ function RegisterPage() {
       </div>
     </div>
   );
-}``
+}
+``;
 
 export default RegisterPage;
