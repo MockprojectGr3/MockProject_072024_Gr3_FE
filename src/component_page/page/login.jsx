@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import car from "../../assets/image/img.png";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, EyeOutlined, EyeInvisibleOutlined } from "@ant-design/icons";
 
 function LoginPage() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -17,11 +19,15 @@ function LoginPage() {
     });
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="max-w-3xl mx-auto p-5 border border-gray-300 rounded-lg shadow-md flex items-start text-left mt-5">
       <div className="flex-2 pr-5">
         <h1 className="text-xl font-semibold">Sign In</h1>
-        <form onSubmit="" className="flex flex-col mt-5">
+        <form className="flex flex-col mt-5">
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">
               <div className="mb-4">
@@ -31,8 +37,8 @@ function LoginPage() {
                     type="email"
                     name="email"
                     placeholder="Email *"
-                    value=""
-                    onChange=""
+                    value={form.email}
+                    onChange={handleChange}
                     required
                     className="w-96 p-2 border border-gray-300 rounded-md"
                   />
@@ -42,18 +48,24 @@ function LoginPage() {
           </div>
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 Password
                 <label className="block mb-1">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"} // Toggle between "text" and "password"
                     name="password"
                     placeholder="Password *"
-                    value=""
-                    onChange=""
+                    value={form.password}
+                    onChange={handleChange}
                     required
-                    className="w-96 p-2 border border-gray-300 rounded-md"
+                    className="w-96 p-2 border border-gray-300 rounded-md pr-10"
                   />
+                  <span
+                    onClick={togglePasswordVisibility}
+                    className="absolute inset-y-0 right-0 mt-4 flex items-center pr-3 cursor-pointer"
+                  >
+                    {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                  </span>
                 </label>
               </div>
             </div>
