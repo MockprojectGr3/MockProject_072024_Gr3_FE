@@ -7,6 +7,10 @@
     gap: 10px;
     display: flex;
 }
+
+.train-box:hover{
+  cursor: pointer;
+}
   .slider-item:last-child {
     margin-right: 0;
   }
@@ -55,4 +59,15 @@
 
 .slick-disabled {
     display: none !important;
+}
+
+.p-4-train {
+  text-align: justify;
+  display: inline-grid;
+  padding: 1rem;
+  gap: 22px;
+}
+.mb-2 {
+  font-size: 22px;
+  height: 40px;
 }
