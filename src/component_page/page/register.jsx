@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
 import request from "../../util/axios";
+import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -16,6 +17,9 @@ function RegisterPage() {
     company_id: "2",
     role: "customer",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -214,7 +218,7 @@ function RegisterPage() {
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Password
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     value={form.password}
                     onChange={handleChange}
@@ -227,15 +231,26 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      top: "35px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                  </span>
                 </label>
               </div>
             </div>
-            <div style={{ flex: "1" }}>
+            <div style={{ flex: "1", position: "relative" }}>
               <div style={{ marginBottom: "15px" }}>
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Re-Password
                   <input
-                    type="password"
+                    type={showRePassword ? "text" : "password"}
                     name="rePassword"
                     value={form.rePassword}
                     onChange={handleChange}
@@ -248,71 +263,17 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
-                </label>
-              </div>
-            </div>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  Country
-                  <input
-                    type="text"
-                    name="country"
-                    value={form.country}
-                    onChange={handleChange}
-                    required
+                  <span
+                    onClick={() => setShowRePassword(!showRePassword)}
                     style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
+                      position: "absolute",
+                      right: "10px",
+                      top: "35px",
+                      cursor: "pointer",
                     }}
-                  />
-                </label>
-              </div>
-            </div>
-            <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  State
-                  <input
-                    type="text"
-                    name="state"
-                    value={form.state}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
-                    }}
-                  />
-                </label>
-              </div>
-            </div>
-            <div style={{ flex: "1" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  City
-                  <input
-                    type="text"
-                    name="city"
-                    value={form.city}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
-                    }}
-                  />
+                  >
+                    {showRePassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                  </span>
                 </label>
               </div>
             </div>
