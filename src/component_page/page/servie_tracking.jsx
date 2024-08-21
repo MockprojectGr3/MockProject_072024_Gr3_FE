@@ -157,7 +157,7 @@ function Items({ currentItems }) {
             <p>Customer Name:&nbsp;{info_customer.customer_name}</p>
             <p>Service:&nbsp;{info_customer.service}</p>
             <p>Requirement:&nbsp;{info_customer.requirement}</p>
-            <table class="table table-bordered">
+            <table className="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Avatar</th>
@@ -174,7 +174,7 @@ function Items({ currentItems }) {
                             key={index}
                         >
                             <td>
-                                <i class="fas fa-user-circle"></i> {item.bodyguard_name}<br />
+                                <i className="fas fa-user-circle"></i> {item.bodyguard_name}<br />
                                 {item.sdt}
                             </td>
                             <td>{item.bodyguard_name}</td>
