@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { EyeOutlined, EyeInvisibleOutlined } from "@ant-design/icons";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
-
+import request from "../../util/axios";
+import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-    username: "",
-    fullname: "",
+    user_name: "",
+    full_name: "",
     email: "",
     password: "",
-    rePassword: "",
     phone: "",
-    date_of_birth: "",
+    day_of_birth: "",
     gender: "",
-    addres: "1",
+    address_id: "1",
     company_id: "2",
-    terms: false,
+    role: "customer",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -35,8 +35,22 @@ function RegisterPage() {
       alert("Passwords do not match!");
       return;
     }
-    // Handle form submission logic here
-    console.log("Form submitted:", form);
+    const registerRequest = async () => {
+      await request({
+        method: "post",
+        serverType: "node",
+        data: form,
+        apiEndpoint: "api/register",
+        onSuccess: () => {
+          alert("Successfully Register");
+          navigate("/login");
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      });
+    };
+    registerRequest();
   };
 
   return (
@@ -74,8 +88,8 @@ function RegisterPage() {
               User Name
               <input
                 type="text"
-                name="username"
-                value={form.username}
+                name="user_name"
+                value={form.user_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -93,8 +107,8 @@ function RegisterPage() {
               Full Name
               <input
                 type="text"
-                name="fullname"
-                value={form.fullname}
+                name="full_name"
+                value={form.full_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -152,7 +166,54 @@ function RegisterPage() {
             </div>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <div style={{ flex: "1", marginRight: "10px", position: "relative" }}>
+            <div style={{ flex: "1", marginRight: "10px" }}>
+              <div style={{ marginBottom: "15px" }}>
+                <label style={{ display: "block", marginBottom: "5px" }}>
+                  Date of Birth
+                  <input
+                    type="date"
+                    name="day_of_birth"
+                    value={form.day_of_birth}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      boxSizing: "border-box",
+                      borderRadius: "4px",
+                      border: "1px solid #ddd",
+                    }}
+                  />
+                </label>
+              </div>
+            </div>
+            <div style={{ flex: "1" }}>
+              <div style={{ marginBottom: "15px" }}>
+                <label style={{ display: "block", marginBottom: "5px" }}>
+                  Gender
+                  <select
+                    name="gender"
+                    value={form.gender}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      boxSizing: "border-box",
+                      borderRadius: "4px",
+                      border: "1px solid #ddd",
+                    }}
+                  >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <div style={{ flex: "1", marginRight: "10px" }}>
               <div style={{ marginBottom: "15px" }}>
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Password
@@ -282,5 +343,6 @@ function RegisterPage() {
     </div>
   );
 }
+``;
 
 export default RegisterPage;
