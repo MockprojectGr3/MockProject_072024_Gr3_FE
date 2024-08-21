@@ -24,13 +24,13 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import PriceList from './component_page/page/price_list.jsx'
-import AboutUs from './component_page/page/aboutUs.jsx'
+//import AboutUs from './component_page/page/aboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
 import Career from './component_page/page/career.jsx'
 import Payment from './component_page/page/payment.jsx'
-import ABoutUs from './component_page/page/aboutUs.jsx'
+//import ABoutUs from './component_page/page/aboutUs.jsx'
 import Service_Tracking from './component_page/page/servie_tracking.jsx'
 
 const router = createBrowserRouter([
@@ -54,10 +54,10 @@ const router = createBrowserRouter([
         path: "forget-password",
         element: <ForgetPassword />,
       },
-      {
-        path: "about",
-        element: <AboutUs />,
-      },
+      // {
+      //   path: "about",
+      //   element: <AboutUs />,
+      // },
       {
         path: "email-sent",
         element: <EmailSent />,
