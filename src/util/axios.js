@@ -56,7 +56,7 @@ import axios from "axios";
 
 const servers = {
   php: "dec4-14-176-232-65",
-  node: "f9e8-116-105-20-219",
+  node: "7e29-14-176-232-65",
   java: "8c76-171-243-49-233",
   python: "8c76-171-243-49-233",
 };
