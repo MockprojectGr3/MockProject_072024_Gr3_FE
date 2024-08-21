@@ -1,4 +1,27 @@
+import { useEffect, useState } from "react";
+import request from "../util/axios";
+
 function AboutGuard() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      request({
+        method: "get",
+        serverType: "node",
+        apiEndpoint: "about-guarid",
+        onSuccess: (data) => {
+          setData(data);
+          console.log("data:", data);
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      });
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
       <center>
@@ -13,25 +36,21 @@ function AboutGuard() {
           <br /> FEATURES SINCE 2000
         </h2>
         <div className="flex flex-row flex-wrap justify-between bg-white text-gray-600 mt-5">
-          <div className="text-left">
+          <div className="text-left col">
             <p>
               Our commitment to safety is embedded in the innovative
               technologies we <br /> employ to keep you protected.
             </p>
-            <div className="flex gap-5 ms-4">
-              <ul className="text-left list-disc">
-                <li>Established in 2000</li>
-                <li>Trusted security provider</li>
-                <li>
-                  Smart features for enhanced
-                  <br /> safety
-                </li>
-              </ul>
-              <ul className="text-left list-disc">
-                <li>Two decades of experience</li>
-                <li>Innovative security solutions</li>
-                <li>Prioritizing your safety</li>
-              </ul>
+            <div className="grid grid-cols-3 gap-5 ms-4">
+              {data.map((data) => {
+                return (
+                  <>
+                    <ul className="text-left list-disc">
+                      <li>{data}</li>
+                    </ul>
+                  </>
+                );
+              })}
             </div>
             <button className="bg-gray-800 p-2 px-3 mt-4 rounded-lg text-white">
               READ MORE
