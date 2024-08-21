@@ -154,10 +154,7 @@ const router = createBrowserRouter([
         path: "slidebar_admin",
         element: <Slidebar />
       },
-      {
-        path: "slidebar_admin",
-        element: <Slidebar />
-      },
+
       {
         path: "training_detail",
         element: <TrainingDetail />

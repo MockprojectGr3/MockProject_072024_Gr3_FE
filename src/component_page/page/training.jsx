@@ -38,6 +38,8 @@ const Training = () => {
     navigate('/training_detail');
   }
 
+  const firstCourse = listCourseTrain[0] || {};
+
   return (
     <>
       <div className="bg-gray-100 text-gray-800">
@@ -46,29 +48,39 @@ const Training = () => {
           <h1 className="text-2xl font-bold mb-6">Continue the course</h1>
 
           <div className="flex space-x-4 mb-4">
-            <div className="bg-white p-4 rounded-lg shadow-md flex items-center flex-grow">
-              <img src={img} alt="Personal security" className="w-16 h-16 object-cover rounded-lg mr-4" />
-              <div className="flex-grow">
-                <h2 className="font-semibold text-lg">Personal security</h2>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-                  <div className="bg-green-500 h-2 rounded-full" style={{ width: '50%' }}></div>
+            {firstCourse && (
+              <>
+                <div className="bg-white p-4 rounded-lg shadow-md flex items-center flex-grow"
+                  style={{ cursor: 'pointer' }}
+                  onClick={handleRedirectDetailTrain}
+                >
+                  <img src={img} alt="Personal security" className="w-16 h-16 object-cover rounded-lg mr-4" />
+                  <div className="flex-grow">
+                    <h2 className="font-semibold text-lg">{firstCourse.name}</h2>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: '50%' }}></div>
+                    </div>
+                  </div>
+                  <span className="text-gray-600 ml-2">50%</span>
                 </div>
-              </div>
-              <span className="text-gray-600 ml-2">50%</span>
-            </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md w-64">
-              <h3 className="font-semibold">Lesson 1</h3>
-              <p className="text-sm">Personal security</p>
-              <p className="text-sm text-gray-600">Time: 30 date</p>
-            </div>
+                <div className="bg-white p-4 rounded-lg shadow-md w-64">
+                  <h3 className="font-semibold">Lesson 1</h3>
+                  <p className="text-sm">{firstCourse.name}</p>
+                  <p className="text-sm text-gray-600">Time: {firstCourse.dur}</p>
+                </div>
 
-            <div className="flex justify-end">
-              <div className="bg-white p-3 rounded-lg shadow-md">
-                <p className="text-sm font-semibold">Studying (1)</p>
-                <p className="text-sm font-semibold">Learned (2)</p>
-              </div>
-            </div>
+                <div className="flex justify-end">
+                  <div className="bg-white p-3 rounded-lg shadow-md">
+                    <p className="text-sm font-semibold">Studying (1)</p>
+                    <p className="text-sm font-semibold">Learned (2)</p>
+                  </div>
+                </div>
+              </>
+
+            )}
+
+
           </div>
         </div>
 
