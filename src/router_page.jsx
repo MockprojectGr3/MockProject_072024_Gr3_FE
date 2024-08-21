@@ -30,8 +30,12 @@ import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
 import Career from './component_page/page/career.jsx'
 import Payment from './component_page/page/payment.jsx'
-//import ABoutUs from './component_page/page/aboutUs.jsx'
 import Service_Tracking from './component_page/page/servie_tracking.jsx'
+import Profile from './component_page/page/profile/UserProfile.jsx'
+import Personal from './component_page/page/profile/editPersonal.jsx'
+import Account from './component_page/page/profile/editAccount.jsx'
+import Information from './component_page/page/profile/editJobProfile.jsx'
+import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -130,6 +134,31 @@ const router = createBrowserRouter([
         path: "service-tracking",
         element: <Service_Tracking />
       },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "editPersonal",
+        element: <Personal />
+      },
+      {
+        path: "editAccount",
+        element: <Account />
+      },
+      {
+        path: "editJobProfile",
+        element: <Information />
+      },
+      {
+        path: "slidebar_admin",
+        element: <Slidebar />
+      },
+
+      {
+        path: "training_detail",
+        element: <TrainingDetail />
+      }
     ]
   }]);
 

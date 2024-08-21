@@ -1,21 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import request from "../../util/axios";
+import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-    username: "",
-    fullname: "",
+    user_name: "",
+    full_name: "",
     email: "",
     password: "",
-    rePassword: "",
     phone: "",
-    dob: "",
+    day_of_birth: "",
     gender: "",
-    country: "",
-    state: "",
-    city: "",
-    terms: false,
+    address_id: "1",
+    company_id: "2",
+    role: "customer",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,8 +35,22 @@ function RegisterPage() {
       alert("Passwords do not match!");
       return;
     }
-    // Handle form submission logic here
-    console.log("Form submitted:", form);
+    const registerRequest = async () => {
+      await request({
+        method: "post",
+        serverType: "node",
+        data: form,
+        apiEndpoint: "api/register",
+        onSuccess: () => {
+          alert("Successfully Register");
+          navigate("/login");
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      });
+    };
+    registerRequest();
   };
 
   return (
@@ -70,8 +88,8 @@ function RegisterPage() {
               User Name
               <input
                 type="text"
-                name="username"
-                value={form.username}
+                name="user_name"
+                value={form.user_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -89,8 +107,8 @@ function RegisterPage() {
               Full Name
               <input
                 type="text"
-                name="fullname"
-                value={form.fullname}
+                name="full_name"
+                value={form.full_name}
                 onChange={handleChange}
                 required
                 style={{
@@ -154,8 +172,8 @@ function RegisterPage() {
                   Date of Birth
                   <input
                     type="date"
-                    name="dob"
-                    value={form.dob}
+                    name="day_of_birth"
+                    value={form.day_of_birth}
                     onChange={handleChange}
                     required
                     style={{
@@ -200,7 +218,7 @@ function RegisterPage() {
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Password
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     value={form.password}
                     onChange={handleChange}
@@ -213,15 +231,26 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      top: "35px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                  </span>
                 </label>
               </div>
             </div>
-            <div style={{ flex: "1" }}>
+            <div style={{ flex: "1", position: "relative" }}>
               <div style={{ marginBottom: "15px" }}>
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Re-Password
                   <input
-                    type="password"
+                    type={showRePassword ? "text" : "password"}
                     name="rePassword"
                     value={form.rePassword}
                     onChange={handleChange}
@@ -234,71 +263,17 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
-                </label>
-              </div>
-            </div>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  Country
-                  <input
-                    type="text"
-                    name="country"
-                    value={form.country}
-                    onChange={handleChange}
-                    required
+                  <span
+                    onClick={() => setShowRePassword(!showRePassword)}
                     style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
+                      position: "absolute",
+                      right: "10px",
+                      top: "35px",
+                      cursor: "pointer",
                     }}
-                  />
-                </label>
-              </div>
-            </div>
-            <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  State
-                  <input
-                    type="text"
-                    name="state"
-                    value={form.state}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
-                    }}
-                  />
-                </label>
-              </div>
-            </div>
-            <div style={{ flex: "1" }}>
-              <div style={{ marginBottom: "15px" }}>
-                <label style={{ display: "block", marginBottom: "5px" }}>
-                  City
-                  <input
-                    type="text"
-                    name="city"
-                    value={form.city}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "8px",
-                      boxSizing: "border-box",
-                      borderRadius: "4px",
-                      border: "1px solid #ddd",
-                    }}
-                  />
+                  >
+                    {showRePassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                  </span>
                 </label>
               </div>
             </div>
@@ -312,7 +287,7 @@ function RegisterPage() {
                 onChange={handleChange}
                 required
               />
-                I agree to the terms and conditions
+              I agree to the terms and conditions
             </label>
           </div>
           <button
@@ -338,10 +313,10 @@ function RegisterPage() {
               color: "#fff",
               border: "none",
               borderRadius: "4px",
-              textDecoration: "none", 
+              textDecoration: "none",
               cursor: "pointer",
               marginTop: "10px",
-              textAlign:"center",
+              textAlign: "center",
             }}
           >
             Back to Login
@@ -367,6 +342,7 @@ function RegisterPage() {
       </div>
     </div>
   );
-}``
+}
+``;
 
 export default RegisterPage;

@@ -35,7 +35,7 @@ const FeedbackPage = () => {
                 <form onSubmit={handleSubmit} className="row g-3">
                     <div className="col-md-6">
                         <label htmlFor="inputname" className="form-label">Name</label>
-                        <input name='name' type="text" required className="form-control" id="inputname" placeholder="Your name" onChange={handleChangeForm} />
+                        <input type="text" className="form-control" id="inputname" placeholder="John Carter" />
                         <i className="far fa-user"></i>
                     </div>
                     <div className="col-md-6">
@@ -46,13 +46,12 @@ const FeedbackPage = () => {
                             className="form-control"
                             id="inputnumber"
                             placeholder='(123) 456 -7890'
-                            required
-                            onChange={handleChangeForm} />
+                            required />
                         <i className="fas fa-mobile-alt"></i>
                     </div>
                     <div className="col-12">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
-                        <input name='email' type="email" className="form-control" id="inputEmail4" required onChange={handleChangeForm} />
+                        <input type="email" className="form-control" id="inputEmail4" required />
                         <i className="far fa-envelope"></i>
                     </div>
                     <div className='col-12'>
