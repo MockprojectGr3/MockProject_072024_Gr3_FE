@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChooseServices= () => {
+const ChooseServices = () => {
   const [selectedServices, setSelectedServices] = useState([]);
   const [levelRating, setLevelRating] = useState([]);
 
@@ -32,10 +32,10 @@ const ChooseServices= () => {
           <div key={index} className="mb-4">
             <label className="flex items-center justify-between">
               <span className="text-lg font-semibold">{section.title}</span>
-              <input 
-                type="checkbox" 
-                className="mr-8" 
-                onChange={() => toggleService(section.title)} 
+              <input
+                type="checkbox"
+                className="mr-8"
+                onChange={() => toggleService(section.title)}
                 checked={selectedServices.includes(section.title)}
               />
             </label>
@@ -43,11 +43,11 @@ const ChooseServices= () => {
               {section.options.map((option, optionIndex) => (
                 <label key={optionIndex} className="flex items-center justify-between">
                   <span>{option}</span>
-                  <input 
-                    type="radio" 
-                    className="mr-8" 
+                  <input
+                    type="radio"
+                    className="mr-8"
                     name={section.title}
-                    onChange={() => toggleService(option)} 
+                    onChange={() => toggleService(option)}
                     checked={selectedServices.includes(option)}
                   />
                 </label>
@@ -58,7 +58,7 @@ const ChooseServices= () => {
 
         <div className="flex justify-end">
           <a href="#" className="text-white hover:underline flex items-center">
-            More Detail 
+            More Detail
             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -71,9 +71,9 @@ const ChooseServices= () => {
         {["Normal", "High", "Important"].map((rating, index) => (
           <label key={index} className="flex items-center mr-4">
             <span className="mr-2">{rating}</span>
-            <input 
-              type="checkbox" 
-              className="mr-1" 
+            <input
+              type="checkbox"
+              className="mr-1"
               checked={levelRating.includes(rating)}
               onChange={() => toggleLevelRating(rating)}
             />
@@ -81,12 +81,12 @@ const ChooseServices= () => {
         ))}
       </div>
 
-      <textarea 
-        className="border border-[#728BAD] rounded-lg p-2 w-full max-w-md mb-4 h-32" 
+      <textarea
+        className="border border-[#728BAD] rounded-lg p-2 w-full max-w-md mb-4 h-32"
         placeholder="Note request..."
       />
       <div className="w-full max-w-md flex justify-end">
-        <button className="bg-[#728BAD] text-white px-6 py-2 rounded-lg">Send</button>
+        <button className="bg-[#3579da] text-white px-6 py-2 rounded-lg">Send&nbsp;&nbsp;<i className="fas fa-paper-plane" style={{ fontSize: '20px' }}></i></button>
       </div>
     </div>
   );
