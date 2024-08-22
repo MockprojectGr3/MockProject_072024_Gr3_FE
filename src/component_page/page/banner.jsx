@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const slides = [
   {
@@ -18,6 +19,12 @@ const Banner = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const navigate = useNavigate();
+
+  const redirect_contactus = () => {
+    navigate('/contact');
+  }
+
   return (
     <div className="relative h-screen bg-cover bg-center flex items-center transition-all duration-500 ease-in-out"
       style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}>
@@ -26,7 +33,9 @@ const Banner = () => {
         <div className="flex flex-col justify-center h-full text-white w-1/2" style={{ marginRight: '25px' }}>
           <h1 className="text-4xl md:text-6xl font-bold">{slides[currentSlide].title}</h1>
           <div className="mt-8">
-            <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded inline-block">
+            <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded inline-block"
+              onClick={redirect_contactus}
+            >
               CONTACT US
             </button>
           </div>

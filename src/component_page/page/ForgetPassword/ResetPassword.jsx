@@ -1,19 +1,40 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import request from '../../../util/axios';
 
 function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [verificationCode, setVerificationCode] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      // Handle password reset logic
-      navigate('/login');
-    } else {
-      alert('Passwords do not match');
+    if (password !== confirmPassword) {
+      setMessage('Passwords do not match');
+      return;
     }
+    request({
+      method: 'post',
+      serverType: "node",
+      apiEndpoint: 'api/reset-password',
+      data: {
+        email: localStorage.getItem('email'),
+        verificationCode,
+        newPassword: password
+      },
+      onSuccess: (data) => {
+        setMessage(data.message);
+        console.log('Check notice resetpassword: ', data.message)
+        navigate('/login');
+      },
+      onError: (error) => {
+        setMessage(error.response?.data?.message || 'Error occurred');
+        console.log('Check error resetpassword: ', error.response?.data?.message)
+      },
+    });
   };
 
   return (
@@ -50,6 +71,17 @@ function ResetPassword() {
               required
             />
           </div>
+          <div className="mb-4 relative">
+            <input
+              className="w-full px-3 py-2 border rounded"
+              type="text"
+              placeholder="Recovery Code *"
+              id="recoveryCode"
+              value={verificationCode}
+              onChange={(e) => setVerificationCode(e.target.value)}
+              required
+            />
+          </div>
           <button
             type="submit"
             className="flex items-center bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
@@ -57,6 +89,7 @@ function ResetPassword() {
             Reset <span className="ml-2">→</span>
           </button>
         </form>
+        {message && <p className="mt-4 text-red-500">{message}</p>}
         <button
           onClick={() => navigate('/login')}
           className="block w-full text-center bg-black text-white py-2 px-4 rounded mt-4"
