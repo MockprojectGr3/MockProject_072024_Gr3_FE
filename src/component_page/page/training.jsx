@@ -1,12 +1,15 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Pagination } from 'antd';
+import Slider from "react-slick";
+
 import Banner from "../page/banner";
 import img from '../../assets/image/image2.jpg';
-import { useState, useEffect } from "react";
+
 import request from "../../util/axios";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../style/training.css";
-import { useNavigate } from "react-router-dom";
 
 const Training = () => {
 
@@ -34,8 +37,8 @@ const Training = () => {
   };
   const navigate = useNavigate();
 
-  const handleRedirectDetailTrain = () => {
-    navigate('/training_detail');
+  const handleRedirectDetailTrain = (id) => {
+    navigate(`/training-detail/${id}`);
   }
 
   const firstCourse = listCourseTrain[0] || {};
@@ -90,7 +93,7 @@ const Training = () => {
           <Slider {...setting}>
             {listCourseTrain.map((item) => (
               <div key={item.course_id} className="train-box bg-black text-white rounded-lg overflow-hidden"
-                onClick={handleRedirectDetailTrain}
+                onClick={() => handleRedirectDetailTrain(item.course_id)}
               >
                 <img src={img} alt="Course" className="w-full object-cover" />
                 <div className="p-4-train">
