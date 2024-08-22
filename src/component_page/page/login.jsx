@@ -19,6 +19,7 @@ function LoginPage() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const fetchData = async () => {
@@ -28,9 +29,9 @@ function LoginPage() {
         data: form,
         apiEndpoint: "api/login",
         onSuccess: (data) => {
-          console.log("Login Successfuly");
+          alert("Login Successfuly");
           localStorage.setItem("token", data.token);
-          navigate("/");
+          // navigate("/");
         },
         onError: (error) => {
           console.log(error);
