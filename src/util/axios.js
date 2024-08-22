@@ -55,10 +55,15 @@
 import axios from "axios";
 
 const servers = {
+<<<<<<< HEAD
   php: "5d55-14-176-232-65",
   node: "e510-113-176-99-140",
+=======
+  php: "ba1d-14-176-232-65",
+  node: "a692-14-176-232-65",
+>>>>>>> a4f82cb14642deac5ee31cca17be8f537fee747a
   java: "8c76-171-243-49-233",
-  python: "116.103.20.59:5000",
+  python: "http://116.103.20.59:5000/api/v1",
 };
 
 const createAxiosInstance = (serverType, apiEndpoint) => {
