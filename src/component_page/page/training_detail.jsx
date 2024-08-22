@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
-import { getTrainingDetail } from "../../services/trainingService";
 import Banner from "../page/banner";
 import img from '../../assets/image/image2.jpg';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getTrainingDetail } from "../../services/trainingService";
 
 const TrainingDetail = () => {
 
@@ -54,12 +53,10 @@ const TrainingDetail = () => {
                   <div className="text-gray-600">Duration: {list.dur}</div>
                   <div className="text-gray-600">Test</div>
                 </div>
-
                 <p className="text-gray-700 mt-2">
                   <strong className="font-bold">Description:</strong> {list.desc}
                 </p>
               </div>
-
               <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
                 <div>
                   <h3 className="text-md font-semibold">Lesson 1: Personal security</h3>

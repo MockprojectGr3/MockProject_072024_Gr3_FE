@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import logo from "../../assets/image/sr-logo.png";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import request from "../../util/axios";
 
@@ -18,6 +19,7 @@ function LoginPage() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const fetchData = async () => {
@@ -27,9 +29,9 @@ function LoginPage() {
         data: form,
         apiEndpoint: "api/login",
         onSuccess: (data) => {
-          console.log("Login Successfuly");
+          alert("Login Successfuly");
           localStorage.setItem("token", data.token);
-          navigate("/");
+          // navigate("/");
         },
         onError: (error) => {
           console.log(error);
@@ -41,8 +43,11 @@ function LoginPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-5 border border-gray-300 rounded-lg shadow-md flex items-start text-left mt-5">
-      <div className="flex-2 pr-5">
-        <h1 className="text-xl font-semibold">Sign In</h1>
+      <div className="flex-1 pr-5">
+        <div className="flex items-center mb-12">
+          <img src={logo} alt="GuardGrid Security Logo" className="max-w-[50%] max-h-[50%] mr-2 object-contain" />
+        </div>
+        <p className="text-xl font-semibold">Sign In</p>
         <form onSubmit={handleSubmit} className="flex flex-col mt-5">
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">
@@ -86,7 +91,8 @@ function LoginPage() {
             >
               Login <ArrowRightOutlined className="ml-2" />
             </button>
-            <a href="#" className="text-sm text-blue-600 hover:underline ml-4">
+            <a href="/forget-password" className="text-sm text-blue-600 hover:underline ml-4">
+
               Forgot your password?
             </a>
           </div>

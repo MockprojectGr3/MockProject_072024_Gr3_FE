@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
-import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
-import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
-import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+import ForgotPassword from './component_page/page/ForgotPassword/ForgotPassword.jsx';
+import EmailSent from './component_page/page/ForgotPassword/EmailSent.jsx';
+import ResetPassword from './component_page/page/ForgotPassword/ResetPassword.jsx';
 import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
@@ -55,8 +55,8 @@ const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "forget-password",
-        element: <ForgetPassword />,
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
         path: "about",
