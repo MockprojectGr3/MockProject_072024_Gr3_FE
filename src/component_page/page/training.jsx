@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Pagination } from 'antd';
@@ -10,6 +11,7 @@ import request from "../../util/axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../style/training.css";
+import { useNavigate } from "react-router-dom";
 
 const Training = () => {
 
