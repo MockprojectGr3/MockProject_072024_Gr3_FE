@@ -6,11 +6,12 @@ import { useEffect } from "react";
 import request from "../../util/axios";
 
 const HomePage = () => {
+  const id  = "1"
   const fetchData = async () => {
     await request({
       method: "get",
       serverType: "node",
-      apiEndpoint: "api/news/news-detail/{id}",
+      apiEndpoint: `api/news/news-detail/${id}`,
       onSuccess: (data) => {
         console.log("data", data);
       },
@@ -20,7 +21,7 @@ const HomePage = () => {
     });
   };
 
-  fetchData();
+  // fetchData();
 
   return (
     <div className="bg-gray-100 text-gray-800">
