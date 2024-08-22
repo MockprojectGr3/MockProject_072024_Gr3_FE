@@ -5,11 +5,13 @@ import request from "../../util/axios";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     user_name: "",
     full_name: "",
     email: "",
     password: "",
+    rePassword: "",
     phone: "",
     day_of_birth: "",
     gender: "",
@@ -23,6 +25,21 @@ function RegisterPage() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    if (name === "day_of_birth") {
+      const selectedDate = new Date(value);
+      const today = new Date();
+
+      if (selectedDate > today) {
+        alert("Please select a date of birth that is not in the future.");
+        setForm({
+          ...form,
+          day_of_birth: "",
+        });
+        return;
+      }
+    }
+
     setForm({
       ...form,
       [name]: type === "checkbox" ? checked : value,
@@ -176,6 +193,7 @@ function RegisterPage() {
                     value={form.day_of_birth}
                     onChange={handleChange}
                     required
+                    max={new Date().toISOString().split("T")[0]}
                     style={{
                       width: "100%",
                       padding: "8px",
@@ -272,7 +290,11 @@ function RegisterPage() {
                       cursor: "pointer",
                     }}
                   >
-                    {showRePassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                    {showRePassword ? (
+                      <EyeInvisibleOutlined />
+                    ) : (
+                      <EyeOutlined />
+                    )}
                   </span>
                 </label>
               </div>

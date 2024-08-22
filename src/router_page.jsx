@@ -24,7 +24,7 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import PriceList from './component_page/page/price_list.jsx'
-//import AboutUs from './component_page/page/aboutUs.jsx'
+import AboutUs from './component_page/page/AboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
@@ -111,7 +111,7 @@ const router = createBrowserRouter([
         element: <TrainingDetail />
       },
       {
-        path: "service_detail",
+        path: "service_detail/:id",
         element: <Service_Detail_Page />,
       },
       {
@@ -154,9 +154,8 @@ const router = createBrowserRouter([
         path: "slidebar_admin",
         element: <Slidebar />
       },
-
       {
-        path: "training_detail",
+        path: "training-detail/:id",
         element: <TrainingDetail />
       }
     ]

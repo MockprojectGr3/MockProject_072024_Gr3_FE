@@ -4,14 +4,16 @@ import Banner from "../page/banner";
 import { fetchData } from "../../util/api";
 import { useEffect } from "react";
 import request from "../../util/axios";
+
 const HomePage = () => {
+  const id  = "1"
   const fetchData = async () => {
     await request({
       method: "get",
       serverType: "node",
-      apiEndpoint: "services",
+      apiEndpoint: `api/news/news-detail/${id}`,
       onSuccess: (data) => {
-        console.log("ađa", data);
+        console.log("data", data);
       },
       onError: (error) => {
         console.log(error);
@@ -19,7 +21,7 @@ const HomePage = () => {
     });
   };
 
-  fetchData();
+  // fetchData();
 
   return (
     <div className="bg-gray-100 text-gray-800">
@@ -115,9 +117,12 @@ const HomePage = () => {
                 <h4 className="text-xl font-semibold">
                   GET THE OUR BEST SECURITY OUT OF SECURITY LIST
                 </h4>
-                <p className="text-blue-600 text-base font-semibold">
+                <a
+                  href="/news_detail"
+                  className="text-blue-600 text-base font-semibold"
+                >
                   READ MORE +
-                </p>
+                </a>
               </div>
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
@@ -135,9 +140,12 @@ const HomePage = () => {
                 <h4 className="text-xl font-semibold">
                   GET THE OUR BEST SECURITY OUT OF SECURITY LIST
                 </h4>
-                <p className="text-blue-600 text-base font-semibold">
+                <a
+                 href="/news_detail"
+                  className="text-blue-600 text-base font-semibold"
+                >
                   READ MORE +
-                </p>
+                </a>
               </div>
             </div>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
@@ -148,9 +156,12 @@ const HomePage = () => {
                 <h4 className="text-xl font-semibold">
                   LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION
                 </h4>
-                <p className="text-blue-600 text-base font-semibold">
+                <a
+                  href="/news_detail"
+                  className="text-blue-600 text-base font-semibold"
+                >
                   READ MORE +
-                </p>
+                </a>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
                 <img
@@ -168,9 +179,12 @@ const HomePage = () => {
                 <h4 className="text-xl font-semibold">
                   LATEST SECURITY TECHNOLOGY FOR THE OBSERVATION
                 </h4>
-                <p className="text-blue-600 text-base font-semibold">
+                <a
+                 href="/news_detail"
+                  className="text-blue-600 text-base font-semibold"
+                >
                   READ MORE +
-                </p>
+                </a>
               </div>
               <div className="flex-shrink-0 w-full md:w-1/2">
                 <img
