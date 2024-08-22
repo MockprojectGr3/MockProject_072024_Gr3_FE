@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import logo from "../../assets/image/sr-logo.png";
 import request from "../../util/axios";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
@@ -91,6 +92,9 @@ function RegisterPage() {
           paddingRight: "20px",
         }}
       >
+        <div className="flex items-center mb-12">
+          <img src={logo} alt="GuardGrid Security Logo" className="max-w-[200px] max-h-[200px] mr-2 object-contain" />
+        </div>      
         <h1 className="text-xl font-semibold">Sign Up</h1>
         <form
           onSubmit={handleSubmit}
@@ -232,7 +236,7 @@ function RegisterPage() {
           </div>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
+              <div style={{ position: 'relative', marginBottom: "15px" }}>
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Password
                   <input
@@ -249,18 +253,18 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span
-                    onClick={() => setShowPassword(!showPassword)}
-                    style={{
-                      position: "absolute",
-                      right: "10px",
-                      top: "35px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
-                  </span>
                 </label>
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: "absolute",
+                    right: '10px',
+                    bottom: '6px',
+                    cursor: "pointer",
+                  }}
+                >
+                  {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                </span>
               </div>
             </div>
             <div style={{ flex: "1", position: "relative" }}>
