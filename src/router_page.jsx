@@ -111,7 +111,7 @@ const router = createBrowserRouter([
         element: <TrainingDetail />
       },
       {
-        path: "service_detail",
+        path: "service_detail/:id",
         element: <Service_Detail_Page />,
       },
       {
