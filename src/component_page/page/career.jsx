@@ -125,8 +125,7 @@ const Career = () => {
 
   const slides = [
     {
-      image:
-        "./src/assets/image/Bannercareer.png",
+      image: "./src/assets/image/Bannercareer.png",
       title: "Unlock Your Potential Discover Your Passion Explore the Path to ",
     },
   ];
