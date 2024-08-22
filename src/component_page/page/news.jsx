@@ -15,9 +15,7 @@ const NewsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://116.103.20.59:5000/api/v1/news"
-        );
+        const response = await axios.get("http://116.103.20.59:5000/api/v1/news");
         setData(response.data);
         console.log(data);
       } catch (error) {

@@ -58,10 +58,10 @@ const router = createBrowserRouter([
         path: "forget-password",
         element: <ForgetPassword />,
       },
-      {
-        path: "about",
-        element: <AboutUs />,
-      },
+      // {
+      //   path: "about",
+      //   element: <AboutUs />,
+      // },
       {
         path: "email-sent",
         element: <EmailSent />,
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
         element: <ChooseServices />,
       },
       {
-        path: "news_detail",
+        path: "news_detail/:id",
         element: <News_DeTail_Page />,
       },
       {
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
         element: <PriceList />
       },
       {
-        path: "training-detail",
+        path: "training-detail/:id",
         element: <TrainingDetail />
       },
       {
@@ -154,6 +154,10 @@ const router = createBrowserRouter([
         path: "slidebar_admin",
         element: <Slidebar />
       },
+      {
+        path: "training-detail/:id",
+        element: <TrainingDetail />
+      }
     ]
   }]);
 
