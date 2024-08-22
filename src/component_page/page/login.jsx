@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import logo from "../../assets/image/sr-logo.png";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import request from "../../util/axios";
+import { jwtDecode } from "jwt-decode";
+import { authentication } from "../../util/auth";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -19,31 +22,50 @@ function LoginPage() {
     });
   };
 
+  function handleNavigate() {
+    navigate("/");
+    window.location.reload();
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fetchData = async () => {
+
+    const login = async () => {
       await request({
         method: "post",
         serverType: "node",
         data: form,
         apiEndpoint: "api/login",
         onSuccess: (data) => {
-          alert("Login Successfuly");
-          localStorage.setItem("token", data.token);
-          // navigate("/");
+          const token = data.user.access_token;
+          const user = jwtDecode(token);
+          if (authentication(user) === true) {
+            localStorage.setItem("token", user);
+            alert("Login Successfuly");
+            setTimeout(() => {
+              handleNavigate();
+            }, 2000);
+          } else {
+            alert("Token expired");
+            localStorage.removeItem("token");
+            navigate("/login");
+          }
         },
         onError: (error) => {
-          console.log(error);
+          console.log(error.message || "Login Failed");
         },
       });
     };
-    fetchData();
+    login();
   };
 
   return (
     <div className="max-w-3xl mx-auto p-5 border border-gray-300 rounded-lg shadow-md flex items-start text-left mt-5">
-      <div className="flex-2 pr-5">
-        <h1 className="text-xl font-semibold">Sign In</h1>
+      <div className="flex-1 pr-5">
+        <div className="flex items-center mb-12">
+          <img src={logo} alt="GuardGrid Security Logo" className="max-w-[50%] max-h-[50%] mr-2 object-contain" />
+        </div>
+        <p className="text-xl font-semibold">Sign In</p>
         <form onSubmit={handleSubmit} className="flex flex-col mt-5">
           <div className="flex flex-wrap">
             <div className="flex-1 mr-2">

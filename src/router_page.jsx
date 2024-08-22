@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
-import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
-import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
-import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+import ForgotPassword from './component_page/page/ForgotPassword/ForgotPassword.jsx';
+import EmailSent from './component_page/page/ForgotPassword/EmailSent.jsx';
+import ResetPassword from './component_page/page/ForgotPassword/ResetPassword.jsx';
 import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
@@ -39,6 +39,7 @@ import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
 import Admin_Page from './component_page/layout_admin/admin_page.jsx';
 import AdminLayout from "./component_page/layout_admin/AdminLayout.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,8 +58,8 @@ const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "forget-password",
-        element: <ForgetPassword />,
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
         path: "about",
@@ -154,7 +155,7 @@ const router = createBrowserRouter([
       },
       {
         path: "slidebar_admin",
-        element: <Slidebar />
+        element: <Sidebar />
       },
       {
         path: "training-detail/:id",
