@@ -24,7 +24,7 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import PriceList from './component_page/page/price_list.jsx'
-import AboutUs from './component_page/page/aboutUs.jsx'
+import AboutUs from './component_page/page/AboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
@@ -35,6 +35,7 @@ import Profile from './component_page/page/profile/UserProfile.jsx'
 import Personal from './component_page/page/profile/editPersonal.jsx'
 import Account from './component_page/page/profile/editAccount.jsx'
 import Information from './component_page/page/profile/editJobProfile.jsx'
+import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -149,6 +150,14 @@ const router = createBrowserRouter([
         path: "editJobProfile",
         element: <Information />
       },
+      {
+        path: "slidebar_admin",
+        element: <Slidebar />
+      },
+      {
+        path: "training_detail",
+        element: <TrainingDetail />
+      }
     ]
   }]);
 
