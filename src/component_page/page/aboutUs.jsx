@@ -27,5 +27,4 @@ function ABoutUs() {
     </div>
   );
 }
-
 export default ABoutUs;
