@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import request from "../../util/axios";
+import { jwtDecode } from "jwt-decode";
+import { authentication } from "../../util/auth";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -19,25 +21,41 @@ function LoginPage() {
     });
   };
 
+  function handleNavigate() {
+    navigate("/");
+    window.location.reload();
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fetchData = async () => {
+
+    const login = async () => {
       await request({
         method: "post",
         serverType: "node",
         data: form,
         apiEndpoint: "api/login",
         onSuccess: (data) => {
-          alert("Login Successfuly");
-          localStorage.setItem("token", data.token);
-          // navigate("/");
+          const token = data.user.access_token;
+          const user = jwtDecode(token);
+          if (authentication(user) === true) {
+            localStorage.setItem("token", user);
+            alert("Login Successfuly");
+            setTimeout(() => {
+              handleNavigate();
+            }, 2000);
+          } else {
+            alert("Token expired");
+            localStorage.removeItem("token");
+            navigate("/login");
+          }
         },
         onError: (error) => {
-          console.log(error);
+          console.log(error.message || "Login Failed");
         },
       });
     };
-    fetchData();
+    login();
   };
 
   return (
