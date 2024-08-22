@@ -38,7 +38,7 @@ const FeedbackPage = () => {
                         <input type="text" className="form-control" id="inputname" placeholder="John Carter" />
                         <i className="far fa-user"></i>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 ">
                         <label htmlFor="inputnumber" className="form-label">Phone Number</label>
                         <input
                             name='phoneNumber'

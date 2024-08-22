@@ -91,7 +91,7 @@ const router = createBrowserRouter([
         element: <ChooseServices />,
       },
       {
-        path: "news_detail",
+        path: "news_detail/:id",
         element: <News_DeTail_Page />,
       },
       {
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
         element: <PriceList />
       },
       {
-        path: "training-detail",
+        path: "training-detail/:id",
         element: <TrainingDetail />
       },
       {

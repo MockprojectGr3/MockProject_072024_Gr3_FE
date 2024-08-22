@@ -37,8 +37,8 @@ const Training = () => {
   };
   const navigate = useNavigate();
 
-  const handleRedirectDetailTrain = () => {
-    navigate('/training_detail');
+  const handleRedirectDetailTrain = (id) => {
+    navigate(`/training-detail/${id}`);
   }
 
   const firstCourse = listCourseTrain[0] || {};
@@ -93,7 +93,7 @@ const Training = () => {
           <Slider {...setting}>
             {listCourseTrain.map((item) => (
               <div key={item.course_id} className="train-box bg-black text-white rounded-lg overflow-hidden"
-                onClick={handleRedirectDetailTrain}
+                onClick={() => handleRedirectDetailTrain(item.course_id)}
               >
                 <img src={img} alt="Course" className="w-full object-cover" />
                 <div className="p-4-train">
