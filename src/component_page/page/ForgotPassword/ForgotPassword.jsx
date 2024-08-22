@@ -1,14 +1,37 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import request from '../../../util/axios';
 
 function ForgetPassword() {
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle email submission logic
-    navigate('/email-sent');
+
+    console.log('Email submitted: ', email);
+
+    await request({
+      method: 'post',
+      serverType: 'node',
+      apiEndpoint: 'api/forgot-password',
+      data: { email },
+      onSuccess: (data) => {
+        console.log("Login Successfuly");
+        setMessage(data.message);
+        console.log('Check notice: ', data);
+        navigate('/email-sent');
+      },
+      onError: (error) => {
+        setMessage(error.response?.data?.message || 'Error occurred');
+        console.log('Check eror: ', error.message);
+      },
+    });
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    console.log('Email input changed: ', e.target.value);
   };
 
   return (
@@ -30,7 +53,7 @@ function ForgetPassword() {
               placeholder="Email Address *"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}
               required
             />
           </div>
@@ -41,6 +64,7 @@ function ForgetPassword() {
             Next <span className="ml-2">→</span>
           </button>
         </form>
+        {message && <p className="mt-4 text-red-500">{message}</p>}
         <button
           onClick={() => navigate('/login')}
           className="block w-full text-center bg-black text-white py-2 px-4 rounded mt-4"
@@ -53,3 +77,4 @@ function ForgetPassword() {
 }
 
 export default ForgetPassword;
+

@@ -35,7 +35,10 @@ import Profile from './component_page/page/profile/UserProfile.jsx'
 import Personal from './component_page/page/profile/editPersonal.jsx'
 import Account from './component_page/page/profile/editAccount.jsx'
 import Information from './component_page/page/profile/editJobProfile.jsx'
-import Sidebar from './component_page/layout_admin/slidebar_admin.jsx'
+import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
+import Admin_Page from './component_page/layout_admin/admin_page.jsx';
+import AdminLayout from "./component_page/layout_admin/AdminLayout.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -157,9 +160,18 @@ const router = createBrowserRouter([
       {
         path: "training-detail/:id",
         element: <TrainingDetail />
-      }
+      },
     ]
-  }]);
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />, // AdminLayout không chứa Header và Footer
+    children: [
+      { index: true, element: <Admin_Page /> },
+      { path: "slidebar_admin", element: <Slidebar /> }
+    ]
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
