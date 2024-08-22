@@ -1,96 +1,86 @@
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import request from '../../util/axios';
 import '../../style/service.css';
 import logopepsi from '../../assets/image/Pepsi-Logo.png';
 import { CheckOutlined } from '@ant-design/icons';
-import request from "../../util/axios";
-import { useNavigate } from 'react-router-dom';
 
 const Service = () => {
-    const listservice = [
-        {
-            id: 1,
-            name: 'Asset Protection',
-            description: 'Property and facility protection services.',
-            img_path: logopepsi
-        },
-        {
-            id: 2,
-            name: 'Personal Protection',
-            description: 'Security services for VIP individuals, celebrities, and famous people',
-            img_path: logopepsi
-        },
-        {
-            id: 3,
-            name: 'Event Protection',
-            description: 'Providing information and security services for major events.',
-            img_path: logopepsi
-        },
-        {
-            id: 4,
-            name: 'Security Patrol Service',
-            description: 'Patrol and security surveillance services.',
-            img_path: logopepsi
-        }
-    ];
-
+    const [services, setServices] = useState([]);
     const navigate = useNavigate();
 
-    const handle_redirect = (id) => {
-        const fetchData = async () => {
-            await request({
+    const fetchServices = async () => {
+        try {
+            const response = await request({
                 method: "get",
                 serverType: "php",
-                apiEndpoint: "api/users/detail-service",
-                onError: (error) => {
-                    console.error(error);
-                },
+                apiEndpoint: "api/users/services",
             });
-            navigate('/service_detail');
-        };
 
-        fetchData();
+            if (response.data.status === 200) {
+                setServices(response.data.data);
+            } else {
+                console.error("Failed to fetch services: ", response.data.message);
+            }
+        } catch (error) {
+            console.error("Failed to fetch services:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchServices();
+    }, []);
+
+    const handleRedirect = (id) => {
+        navigate(`/service_detail/${id}`);
     };
 
     return (
         <>
-            <div className='sv-container'>
+            <div className='sv-container pb-20'>
                 <h1 style={{ marginBottom: '35px', fontSize: '30px' }}>SERVICES</h1>
                 <div className='sv-list'>
-                    {listservice.map((item, index) => (
-                        <div className="max-w-sm p-6" key={index} onClick={() => handle_redirect(item.id)}>
+                    {services.map((item, index) => (
+                        <div className="max-w-sm p-6"
+                            key={index}
+                            onClick={() => handleRedirect(item.id)}
+                        >
                             <div className='img-sv'>
-                                <img src={item.img_path} alt={item.name} width={'100%'} />
+                                <img src={logopepsi} width={'100%'} alt={item.name} />
                             </div>
-                            <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                                {item.name}
-                            </h5>
-                            <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
-                                {item.description}
-                            </p>
+                            <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 text-white truncate">{item.name}</h5>
+                            <p className="mb-3 font-normal text-gray-500 dark:text-gray-400 overflow-hidden text-ellipsis">{item.description}</p>
                         </div>
                     ))}
                 </div>
                 <div className='intro-sv'>
-                    <h4 className='intro-sub'>
-                        You want to know about us, you are curious about what you can get.
-                    </h4>
-                    <h2 className='intro-wel'>Come here with us!!!</h2>
+                <h4 className="text-xl font-bold">You want to know about us, you are curious about what you can get.</h4>
+                <h2 className="text-3xl font-bold mt-2">Come here with us!!!</h2>
                 </div>
                 <div className='info-sv'>
                     <div className='list-item'>
-                        <div className='item' onClick={handle_redirect}>
-                            <img className='icon' src={logopepsi} alt="Shipping protection" width={'120px'} />
+                        <div className='item'
+                            onClick={() => handleRedirect(1)}
+                        >
+                            <img className='icon' src={logopepsi} width={'120px'} alt="Shipping protection" />
                             <span className='su-text'>Shipping protection</span>
                         </div>
-                        <div className='item' onClick={handle_redirect}>
-                            <img className='icon' src={logopepsi} alt="Custodi filios tuos" width={'120px'} />
+                        <div className='item'
+                            onClick={() => handleRedirect(2)}
+                        >
+                            <img className='icon' src={logopepsi} width={'120px'} alt="Custodi filios tuos" />
                             <span className='su-text'>Custodi filios tuos</span>
                         </div>
-                        <div className='item' onClick={handle_redirect}>
-                            <img className='icon' src={logopepsi} alt="Tuam salutem cum monitored aut minati" width={'120px'} />
+                        <div className='item'
+                            onClick={() => handleRedirect(3)}
+                        >
+                            <img className='icon' src={logopepsi} width={'120px'} alt="Tuam salutem cum monitored aut minati" />
                             <span className='su-text'>Tuam salutem cum monitored aut minati</span>
                         </div>
-                        <div className='item' onClick={handle_redirect}>
-                            <img className='icon' src={logopepsi} alt="Protection from surveillance and threats" width={'120px'} />
+                        <div className='item'
+                            onClick={() => handleRedirect(4)}
+                        >
+                            <img className='icon' src={logopepsi} width={'120px'} alt="Protection from surveillance and threats" />
                             <span className='su-text'>Protection from surveillance and threats</span>
                         </div>
                     </div>
@@ -127,9 +117,9 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
-};
+}
 
 export default Service;
