@@ -35,7 +35,7 @@ import Profile from './component_page/page/profile/UserProfile.jsx'
 import Personal from './component_page/page/profile/editPersonal.jsx'
 import Account from './component_page/page/profile/editAccount.jsx'
 import Information from './component_page/page/profile/editJobProfile.jsx'
-import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
+import Sidebar from './component_page/layout_admin/slidebar_admin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -152,7 +152,7 @@ const router = createBrowserRouter([
       },
       {
         path: "slidebar_admin",
-        element: <Slidebar />
+        element: <Sidebar />
       },
       {
         path: "training-detail/:id",
