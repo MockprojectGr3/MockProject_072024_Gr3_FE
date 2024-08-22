@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Pagination } from 'antd';
+import Slider from "react-slick";
 
 import Banner from "../page/banner";
 import img from '../../assets/image/image2.jpg';
-import { useEffect } from "react";
+
 import request from "../../util/axios";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../style/training.css";
-import { useNavigate } from "react-router-dom";
 
 const Training = () => {
 

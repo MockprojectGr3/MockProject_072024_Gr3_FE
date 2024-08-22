@@ -1,8 +1,9 @@
-import Banner from "../page/banner";
-import img from '../../assets/image/image2.jpg';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { getTrainingDetail } from "../../services/trainingService";
+import Banner from "../page/banner";
+import img from '../../assets/image/image2.jpg';
 
 const TrainingDetail = () => {
 
@@ -29,8 +30,6 @@ const TrainingDetail = () => {
       <Banner />
       <div className="bg-gray-100 p-12">
         <h1 className="text-2xl font-bold mb-6">Continoun the course</h1>
-
-
         {/* Course Content */}
         <div className="mt-8 flex flex-col lg:flex-row gap-6">
           {/* Left Section */}

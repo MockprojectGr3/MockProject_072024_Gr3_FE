@@ -110,7 +110,6 @@ const Service = () => {
                                 <span className='su-subtitle'>
                                     Auctoritates auctorum et diversa officia
                                 </span><br />
-
                                 <button className='btn btn-primary' style={{ marginTop: '20px' }}>
                                     More Detail
                                 </button>
