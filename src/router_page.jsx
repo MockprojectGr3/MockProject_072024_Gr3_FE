@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
-import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
-import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
-import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+import ForgotPassword from './component_page/page/ForgotPassword/ForgotPassword.jsx';
+import EmailSent from './component_page/page/ForgotPassword/EmailSent.jsx';
+import ResetPassword from './component_page/page/ForgotPassword/ResetPassword.jsx';
 import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
@@ -24,7 +24,7 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import PriceList from './component_page/page/price_list.jsx'
-import AboutUs from './component_page/page/AboutUs.jsx'
+import AboutUs from './component_page/page/aboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
@@ -55,8 +55,8 @@ const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "forget-password",
-        element: <ForgetPassword />,
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       // {
       //   path: "about",
