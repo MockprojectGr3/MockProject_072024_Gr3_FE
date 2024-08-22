@@ -87,7 +87,7 @@ function LoginPage() {
             >
               Login <ArrowRightOutlined className="ml-2" />
             </button>
-            <a href="#" className="text-sm text-blue-600 hover:underline ml-4">
+            <a href="/forget-password" className="text-sm text-blue-600 hover:underline ml-4">
               Forgot your password?
             </a>
           </div>
