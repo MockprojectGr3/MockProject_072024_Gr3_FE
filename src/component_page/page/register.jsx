@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import logo from "../../assets/image/sr-logo.png";
 import request from "../../util/axios";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
@@ -91,6 +92,9 @@ function RegisterPage() {
           paddingRight: "20px",
         }}
       >
+        <div className="flex items-center mb-12">
+          <img src={logo} alt="GuardGrid Security Logo" className="max-w-[200px] max-h-[200px] mr-2 object-contain" />
+        </div>      
         <h1 className="text-xl font-semibold">Sign Up</h1>
         <form
           onSubmit={handleSubmit}

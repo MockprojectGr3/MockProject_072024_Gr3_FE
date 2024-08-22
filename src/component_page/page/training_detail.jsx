@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
-import { getTrainingDetail } from "../../services/trainingService";
 import Banner from "../page/banner";
 import img from '../../assets/image/image2.jpg';
 import { useEffect, useState } from "react";
