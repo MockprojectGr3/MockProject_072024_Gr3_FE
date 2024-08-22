@@ -3,7 +3,7 @@ import '../../style/equipment.css';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from "react";
 import request from "../../util/axios";
-import moment from 'moment';
+// import moment from 'moment';
 
 // function Items({ currentItems }) {
 //     return (
