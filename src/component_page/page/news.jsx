@@ -59,12 +59,16 @@ const NewsPage = () => {
       id: 8,
       img_path: img2,
     },
+    {
+      id: 9,
+      img_path: img3,
+    },
   ];
   const navigate = useNavigate();
 
   const route_news_detail_id1 = () => {
     // navigate(`/news_detail/${dât}`);
-    navigate("/news_detail");
+    navigate("/news_detail/1"); //replace 1 to id
   };
 
   return (
