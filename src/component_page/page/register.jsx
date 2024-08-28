@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import car from "../../assets/image/img.png";
+import logo from "../../assets/image/sr-logo.png";
 import request from "../../util/axios";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 function RegisterPage() {
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     user_name: "",
     full_name: "",
     email: "",
     password: "",
+    rePassword: "",
     phone: "",
     day_of_birth: "",
     gender: "",
@@ -23,6 +26,21 @@ function RegisterPage() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    if (name === "day_of_birth") {
+      const selectedDate = new Date(value);
+      const today = new Date();
+
+      if (selectedDate > today) {
+        alert("Please select a date of birth that is not in the future.");
+        setForm({
+          ...form,
+          day_of_birth: "",
+        });
+        return;
+      }
+    }
+
     setForm({
       ...form,
       [name]: type === "checkbox" ? checked : value,
@@ -74,6 +92,9 @@ function RegisterPage() {
           paddingRight: "20px",
         }}
       >
+        <div className="flex items-center mb-12">
+          <img src={logo} alt="GuardGrid Security Logo" className="max-w-[200px] max-h-[200px] mr-2 object-contain" />
+        </div>      
         <h1 className="text-xl font-semibold">Sign Up</h1>
         <form
           onSubmit={handleSubmit}
@@ -176,6 +197,7 @@ function RegisterPage() {
                     value={form.day_of_birth}
                     onChange={handleChange}
                     required
+                    max={new Date().toISOString().split("T")[0]}
                     style={{
                       width: "100%",
                       padding: "8px",
@@ -214,7 +236,7 @@ function RegisterPage() {
           </div>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <div style={{ flex: "1", marginRight: "10px" }}>
-              <div style={{ marginBottom: "15px" }}>
+              <div style={{ position: 'relative', marginBottom: "15px" }}>
                 <label style={{ display: "block", marginBottom: "5px" }}>
                   Password
                   <input
@@ -231,18 +253,18 @@ function RegisterPage() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span
-                    onClick={() => setShowPassword(!showPassword)}
-                    style={{
-                      position: "absolute",
-                      right: "10px",
-                      top: "35px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
-                  </span>
                 </label>
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: "absolute",
+                    right: '10px',
+                    bottom: '6px',
+                    cursor: "pointer",
+                  }}
+                >
+                  {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                </span>
               </div>
             </div>
             <div style={{ flex: "1", position: "relative" }}>
@@ -272,7 +294,11 @@ function RegisterPage() {
                       cursor: "pointer",
                     }}
                   >
-                    {showRePassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+                    {showRePassword ? (
+                      <EyeInvisibleOutlined />
+                    ) : (
+                      <EyeOutlined />
+                    )}
                   </span>
                 </label>
               </div>

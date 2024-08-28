@@ -6,6 +6,7 @@ const createUserAPI = (name, email, password) => {
   //  return axios.post(); //default nodejs
 };
 
+
 const fetchData = async () => {
   try {
     const res = await axios.get("/contact");

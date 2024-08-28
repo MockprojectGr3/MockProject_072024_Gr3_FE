@@ -55,10 +55,10 @@
 import axios from "axios";
 
 const servers = {
-  php: "dec4-14-176-232-65",
-  node: "9025-14-176-232-65",
+  php: "ba1d-14-176-232-65",
+  node: "41d6-14-176-232-65",
   java: "8c76-171-243-49-233",
-  python: "8c76-171-243-49-233",
+  python: "http://116.103.20.59:5000/api/v1",
 };
 
 const createAxiosInstance = (serverType, apiEndpoint) => {
@@ -76,8 +76,8 @@ const createAxiosInstance = (serverType, apiEndpoint) => {
 const request = async ({
   method,
   data,
-  onSuccess = () => {},
-  onError = () => {},
+  onSuccess = () => { },
+  onError = () => { },
   serverType = "",
   apiEndpoint = "",
 }) => {

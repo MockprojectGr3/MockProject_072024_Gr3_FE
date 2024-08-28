@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import LoginPage from './component_page/page/login.jsx'
 import HomePage from './component_page/page/homepage.jsx'
-import ForgetPassword from './component_page/page/ForgetPassword/ForgetPassword.jsx';
-import EmailSent from './component_page/page/ForgetPassword/EmailSent.jsx';
-import ResetPassword from './component_page/page/ForgetPassword/ResetPassword.jsx';
+import ForgotPassword from './component_page/page/ForgotPassword/ForgotPassword.jsx';
+import EmailSent from './component_page/page/ForgotPassword/EmailSent.jsx';
+import ResetPassword from './component_page/page/ForgotPassword/ResetPassword.jsx';
 import TermsAndConditions from './component_page/page/termsandconditions.jsx'
 import ContactPage from './component_page/page/contact.jsx'
 import NewsPage from './component_page/page/news.jsx'
@@ -24,7 +24,7 @@ import FeedbackPage from './component_page/page/feedback.jsx'
 import Service_Detail_Page from './component_page/page/service_detail.jsx'
 import Training from './component_page/page/training.jsx'
 import PriceList from './component_page/page/price_list.jsx'
-import AboutUs from './component_page/page/aboutUs.jsx'
+import AboutUs from './component_page/page/AboutUs.jsx'
 import TrainingDetail from './component_page/page/training_detail.jsx'
 import FAQ_Page from './component_page/page/faq.jsx'
 import Equipment_Page from './component_page/page/equipment.jsx'
@@ -35,6 +35,10 @@ import Profile from './component_page/page/profile/UserProfile.jsx'
 import Personal from './component_page/page/profile/editPersonal.jsx'
 import Account from './component_page/page/profile/editAccount.jsx'
 import Information from './component_page/page/profile/editJobProfile.jsx'
+import Slidebar from './component_page/layout_admin/slidebar_admin.jsx'
+import Admin_Page from './component_page/layout_admin/admin_page.jsx';
+import AdminLayout from "./component_page/layout_admin/AdminLayout.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -54,8 +58,8 @@ const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "forget-password",
-        element: <ForgetPassword />,
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
         path: "about",
@@ -90,7 +94,7 @@ const router = createBrowserRouter([
         element: <ChooseServices />,
       },
       {
-        path: "news_detail",
+        path: "news_detail/:id",
         element: <News_DeTail_Page />,
       },
       {
@@ -106,11 +110,11 @@ const router = createBrowserRouter([
         element: <PriceList />
       },
       {
-        path: "training-detail",
+        path: "training-detail/:id",
         element: <TrainingDetail />
       },
       {
-        path: "service_detail",
+        path: "service_detail/:id",
         element: <Service_Detail_Page />,
       },
       {
@@ -149,8 +153,25 @@ const router = createBrowserRouter([
         path: "editJobProfile",
         element: <Information />
       },
+      {
+        path: "slidebar_admin",
+        element: <Sidebar />
+      },
+      {
+        path: "training-detail/:id",
+        element: <TrainingDetail />
+      },
     ]
-  }]);
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />, // AdminLayout không chứa Header và Footer
+    children: [
+      { index: true, element: <Admin_Page /> },
+      { path: "slidebar_admin", element: <Slidebar /> }
+    ]
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -52,7 +52,7 @@ const Header = () => {
     console.log("click ", e);
     setCurrent(e.key);
   };
-  
+
   function handleLogout() {
     localStorage.removeItem("token");
     window.location.href = "/";
